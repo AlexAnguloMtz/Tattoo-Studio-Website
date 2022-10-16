@@ -1,0 +1,74 @@
+.hamburguer {
+    $side: 40px;
+    $timing: 250ms;
+    $timing-function: ease;
+    $distance-between-lines: -9px;
+
+    width: $side;
+    height: $side;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    background: transparent;
+
+    .line {
+        height: 3px;
+        border-radius: 3px;
+        background: white;
+    }
+
+    .inner-line {
+        position: absolute;
+    }
+
+    .center {
+        width: inherit;
+        position: relative;
+        display: flex;
+        justify-content: end;
+        transition: transform $timing $timing-function;
+        transform: rotate(0deg);
+    }
+
+    .top {
+        width: 65%;
+        top: $distance-between-lines;
+        transition:
+            transform $timing ease,
+            top $timing $timing-function $timing,
+            width $timing $timing-function $timing;
+        transform: rotate(0deg);
+    }
+
+    .bottom {
+        width: 45%;
+        bottom: $distance-between-lines;
+        transition: bottom $timing $timing-function $timing;
+    }
+
+    &.close {
+
+        .center {
+            transition: transform $timing $timing-function $timing;
+            transform: rotate(135deg);
+        }
+
+        .top {
+            transition:
+                top $timing $timing-function,
+                width $timing $timing-function $timing,
+                transform $timing $timing-function $timing;
+            top: 0px;
+            width: 100%;
+            transform: rotate(-275deg);
+        }
+
+        .bottom {
+            transition: bottom $timing $timing-function;
+            bottom: 0px
+        }
+
+    }
+
+}
