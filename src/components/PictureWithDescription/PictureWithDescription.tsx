@@ -1,7 +1,6 @@
 import './PictureWithDescription.scss';
-import pic from '../../pictures/tatto-flowers.jpg';
+import pic from '../../pictures/tatto-flowers-small.jpeg';
 import { useRef } from 'react';
-import { useIntersectionObserver } from 'usehooks-ts';
 import { useSimpleIntersectionObserver } from '../../custom-hooks/useSimpleIntersectionObserver';
 
 export const PictureWithDescription = () => {
