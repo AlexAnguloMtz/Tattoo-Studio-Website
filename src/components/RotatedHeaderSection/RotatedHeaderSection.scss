@@ -20,12 +20,11 @@
     &__header {
         background-color: white;
         font-family: $main-headers-font-style;
-        text-align: center;
         transform-origin: left top;
         transform: rotate(-90deg) translateX(-100%);
         width: 100vh;
         height: 40vw;
-        font-size: 5em;
+        font-size: 3.4em;
         display: flex;
         justify-content: center;
         align-items: center;
