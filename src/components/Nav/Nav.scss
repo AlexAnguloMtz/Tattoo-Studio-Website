@@ -1,0 +1,15 @@
+@import '../../scss-common/Common.scss';
+
+.nav {
+    background-color: black;
+    height: $nav-height;
+    padding: 0 1.2em;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}

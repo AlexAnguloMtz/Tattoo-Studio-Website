@@ -1,0 +1,106 @@
+@import '../../scss-common/Common.scss';
+
+.footer {
+    height: 95%;
+    background-color: white;
+    font-size: 1.4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+    position: relative;
+
+    & * {
+        font-family: $main-headers-font-style;
+        width: 100%;
+        text-align: center;
+    }
+
+    &.visible {
+        .phone {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .social-media .icon {
+            opacity: 1;
+
+            &.ig,
+            &.wh {
+                transform: none;
+            }
+        }
+
+        .address {
+            opacity: 1;
+            transform: none;
+        }
+
+        .navigation .link {
+            opacity: 1;
+        }
+    }
+
+    .phone {
+        position: absolute;
+        top: $nav-height + 30px;
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+        transition: clip-path 1200ms ease;
+    }
+
+    .social-media {
+        display: flex;
+        justify-content: center;
+
+        .icon {
+            width: 20%;
+            opacity: 0;
+            transition:
+                opacity 1000ms ease,
+                transform 1000ms ease;
+
+            $translateX-distance: 50px;
+
+            &.ig {
+                transform: translateX($translateX-distance * (-1));
+            }
+
+            &.wh {
+                transform: translateX($translateX-distance);
+            }
+
+        }
+
+    }
+
+    .address {
+        text-align: center;
+        width: 70%;
+        line-height: 1.7;
+        opacity: 0;
+        transform: translateY(50px);
+
+        $duration: 1000ms;
+        transition:
+            opacity $duration ease,
+            transform $duration ease;
+    }
+
+    .navigation {
+        position: absolute;
+        bottom: 2em;
+        display: flex;
+        font-size: 0.8em;
+
+
+        .link {
+            text-decoration: none;
+            display: block;
+            color: inherit;
+            opacity: 0;
+            transition: opacity 1400ms ease;
+        }
+
+    }
+
+}

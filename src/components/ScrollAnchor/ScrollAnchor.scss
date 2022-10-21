@@ -1,0 +1,12 @@
+@import '..//../scss-common/Common.scss';
+
+// The purpose of this scroll anchor is that, 
+// when we need to, we can scroll until we get 
+// to the point where the nav bar ends. This way
+// we prevent from scrolling too much
+$negative-top-for-anchor: $nav-height * (-1);
+
+.scroll-anchor {
+    position: absolute;
+    top: $negative-top-for-anchor;
+}

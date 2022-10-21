@@ -3,18 +3,20 @@
     background-size: cover;
     background-position: center;
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
 
     .overlay {
         height: inherit;
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: rgba(0, 0, 0, 0.5);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        color: white;
+        gap: 4em;
+    }
+
+    .overlay>* {
+        transform: translateY(1.2em);
     }
 
     .header {
@@ -22,7 +24,7 @@
     }
 
     .slogan {
-        color: white;
+        font-family: Dosis;
         font-size: 2.4em;
         font-weight: 100;
         padding: 0 0.5em;
@@ -42,15 +44,75 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: background-color 300ms ease;
+        background-color: white;
+
+        @keyframes up-and-down {
+            $initial: 20px;
+
+            0% {
+                top: $initial;
+            }
+
+            50% {
+                top: 29px;
+            }
+
+            100% {
+                top: $initial;
+            }
+        }
+
+        &::after,
+        &::before {
+            content: '';
+            width: 15px;
+            height: 3px;
+            background-color: black;
+            transition: opacity 300ms ease;
+            border-radius: 5px;
+            position: absolute;
+            transition: background-color 300ms ease;
+            animation-name: up-and-down;
+            animation-duration: 1200ms;
+            animation-timing-function: ease;
+            animation-delay: 0;
+            animation-iteration-count: infinite;
+            animation-fill-mode: forwards;
+        }
+
+        &::before {
+            transform: rotate(45deg);
+            left: 12px;
+        }
 
         &::after {
-            content: '';
-            width: 0;
-            height: 0;
-            border-left: 15px solid transparent;
-            border-right: 15px solid transparent;
-            border-top: 25px solid white;
-            transform: translateY(2px);
+            transform: rotate(-45deg);
+            right: 12px;
+        }
+
+        &:hover {
+            background-color: rgb(193, 185, 185);
+        }
+
+    }
+
+    .call-to-action {
+        font-family: Dosis;
+        font-size: 1.2em;
+        color: white;
+        border-style: solid;
+        border-color: white;
+        padding: 1em;
+
+        $transition-duration: 200ms;
+        transition:
+            color $transition-duration ease,
+            background-color $transition-duration ease;
+
+        &:hover {
+            background: white;
+            color: black;
         }
 
     }
