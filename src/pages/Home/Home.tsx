@@ -1,6 +1,4 @@
-import { createRef, MutableRefObject, useState } from 'react';
-import { Hero } from '../../components/Hero/Hero';
-import { Nav } from '../../components/Nav/Nav';
+import { createRef, FC, MutableRefObject, useState } from 'react';
 import './Home.scss';
 import { ScrollAnchor } from '../../components/ScrollAnchor/ScrollAnchor';
 import { BrandDescription } from '../../components/BrandDescription/BrandDescription';
@@ -8,6 +6,7 @@ import { PictureWithDescription } from '../../components/PictureWithDescription/
 import { FirstTattoSection } from '../../components/FirstTattoSection/FirstTattoSection';
 import { Footer } from '../../components/Footer/Footer';
 import { RotatedHeaderSection } from '../../components/RotatedHeaderSection/RotatedHeaderSection';
+import { HomeHero } from './HomeHero/HomeHero';
 
 export const Home = () => {
 
@@ -17,8 +16,7 @@ export const Home = () => {
 
     return (
         <>
-            <Nav />
-            <Hero onButtonClick={scrollToContent} />
+            <HomeHero onScrollButtonClick={scrollToContent} />
             <BrandDescription >
                 <ScrollAnchor ref={ref} />
             </BrandDescription>

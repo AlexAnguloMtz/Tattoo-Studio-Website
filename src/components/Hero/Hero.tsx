@@ -2,28 +2,43 @@ import { FC } from 'react';
 import { Button } from '../Button/Button';
 import './Hero.scss'
 
-export const Hero: FC<Props> = ({ onButtonClick }) => {
+export const Hero: FC<Props> = ({ children = undefined, img, size = Size.DEFAULT, header, className = '' }) => {
+
+    const aClass: string = className;
+
     return (
-        <div className="hero" >
-            <div className="overlay">
+        <div
+            className={`hero ${sizeClassFor(size)}`}
+            style={{ backgroundImage: `url(${img})` }} >
+            <div className={`overlay ${aClass}`}>
                 <header className='header'>
-                    <h1 className='slogan'>
-                        Más que un tattoo, una experiencia
+                    <h1 className='header__text'>
+                        {header}
                     </h1>
                 </header>
-                <Button
-                    className='call-to-action'
-                    onClick={() => { }}>
-                    Agendar sesión
-                </Button>
-                <Button
-                    className='arrow'
-                    onClick={onButtonClick} />
+                {children}
             </div>
         </div>
     );
 }
 
 interface Props {
-    onButtonClick: () => void
+    children?: JSX.Element[]
+    img: string,
+    size?: Size,
+    header: string,
+    className?: string
+}
+
+export enum Size {
+    DEFAULT,
+    FULL_SCREEN
+}
+
+const sizeClassFor = (size: Size) => {
+    if (size === Size.DEFAULT)
+        return '';
+
+    else if (size === Size.FULL_SCREEN)
+        return 'full-screen';
 }

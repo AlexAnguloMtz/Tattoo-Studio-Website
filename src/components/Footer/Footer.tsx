@@ -25,7 +25,7 @@ export const Footer = () => {
                 {address}
             </p>
             <div className='navigation'>
-                {links.map(link => <a className='link' href=''>{link}</a>)}
+                {links.map(link => <a key={link} className='link' href=''>{link}</a>)}
             </div>
         </footer >
     );

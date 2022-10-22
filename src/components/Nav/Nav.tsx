@@ -2,9 +2,9 @@ import { FC, useState } from 'react';
 import { Hamburguer } from '../Hamburguer/Hamburguer';
 import { Logo } from '../Logo/Logo';
 import './Nav.scss'
-import { NavLinks } from './NavLinks/NavLinks';
+import { ILink, NavLinks } from './NavLinks/NavLinks';
 
-export const Nav = () => {
+export const Nav: FC<Props> = ({ links }) => {
 
     const [areLinksVisible, setLinksVisible] = useState(false);
 
@@ -14,7 +14,11 @@ export const Nav = () => {
         <nav className="nav">
             <Logo />
             <Hamburguer onClick={toggleLinks} />
-            <NavLinks isVisible={areLinksVisible} />
+            <NavLinks links={links} isVisible={areLinksVisible} />
         </nav>
     );
+}
+
+interface Props {
+    links: ILink[]
 }

@@ -1,0 +1,89 @@
+.home-hero {
+    gap: 4em;
+
+    .scroll-button {
+        $side: 50px;
+        width: $side;
+        height: $side;
+        position: absolute;
+        bottom: 40px;
+        border-radius: 50%;
+        border-style: solid;
+        border-color: white;
+        border-width: 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 300ms ease;
+        background-color: white;
+
+        @keyframes up-and-down {
+            $initial: 20px;
+
+            0% {
+                top: $initial;
+            }
+
+            50% {
+                top: 29px;
+            }
+
+            100% {
+                top: $initial;
+            }
+        }
+
+        &::after,
+        &::before {
+            content: '';
+            width: 15px;
+            height: 3px;
+            background-color: black;
+            transition: opacity 300ms ease;
+            border-radius: 5px;
+            position: absolute;
+            transition: background-color 300ms ease;
+            animation-name: up-and-down;
+            animation-duration: 1200ms;
+            animation-timing-function: ease;
+            animation-delay: 0;
+            animation-iteration-count: infinite;
+            animation-fill-mode: forwards;
+        }
+
+        &::before {
+            transform: rotate(45deg);
+            left: 12px;
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+            right: 12px;
+        }
+
+        &:hover {
+            background-color: rgb(193, 185, 185);
+        }
+
+    }
+
+    .call-to-action {
+        font-family: Dosis;
+        font-size: 1.2em;
+        color: white;
+        border-style: solid;
+        border-color: white;
+        padding: 1em;
+
+        $transition-duration: 200ms;
+        transition:
+            color $transition-duration ease,
+            background-color $transition-duration ease;
+
+        &:hover {
+            background: white;
+            color: black;
+        }
+
+    }
+}
