@@ -1,0 +1,63 @@
+@import '../../scss-common/Common.scss';
+
+.artist {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+
+    &__hero {
+        margin-top: $nav-height;
+    }
+
+    .header {
+
+        font-family: Dosis, Roboto, Arial;
+        font-size: 2.7em;
+        text-align: center;
+        padding: 1em 0;
+        max-width: 220px;
+        line-height: 1.2em;
+    }
+
+    .picture {
+        width: 60%;
+    }
+
+    .variable-width {
+        width: 0;
+        transition: width 1300ms ease;
+    }
+
+    .text {
+        width: 85%;
+        padding: 3em 0;
+        font-size: 1.2em;
+        line-height: 2em;
+        font-family: Roboto;
+        font-weight: 300;
+        opacity: 0;
+        transform: translateY(70px);
+        transition:
+            opacity 700ms ease,
+            transform 700ms ease;
+
+        &.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+    }
+
+    &.visible {
+        .variable-width {
+            width: 60%;
+        }
+    }
+
+    .mid-screen-hero {
+        height: 40vh;
+    }
+
+}

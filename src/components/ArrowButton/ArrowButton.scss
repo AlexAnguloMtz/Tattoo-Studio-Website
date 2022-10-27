@@ -1,0 +1,61 @@
+@import '../../scss-common/Common.scss';
+
+.arrow-button {
+    @include circle(40px);
+    @include flex-row-center-center;
+    position: relative;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    transition: background-color 300ms ease;
+    background-color: white;
+
+    @keyframes up-and-down {
+        $initial: 25%;
+
+        0% {
+            top: $initial;
+        }
+
+        50% {
+            top: 50%;
+        }
+
+        100% {
+            top: $initial;
+        }
+    }
+
+    &::after,
+    &::before {
+        content: '';
+        width: 8%;
+        height: 35%;
+        background-color: black;
+        transition: opacity 300ms ease;
+        border-radius: 5px;
+        position: absolute;
+        transition: background-color 300ms ease;
+        animation-name: up-and-down;
+        animation-duration: 1500ms;
+        animation-timing-function: ease;
+        animation-delay: 0;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+    }
+
+    &::before {
+        transform: rotate(135deg);
+        left: 35%;
+    }
+
+    &::after {
+        transform: rotate(-135deg);
+        right: 35%;
+    }
+
+    &:hover {
+        background-color: rgb(193, 185, 185);
+    }
+
+}

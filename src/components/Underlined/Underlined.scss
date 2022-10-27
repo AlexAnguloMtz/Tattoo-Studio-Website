@@ -1,0 +1,16 @@
+@import '../../scss-common/Common.scss';
+
+.underlined {
+    font-family: inherit;
+    position: relative;
+
+    &__line {
+        background-color: $emphasis-color;
+        width: 63%;
+        height: 2px;
+        position: absolute;
+        left: 0;
+        bottom: 4px;
+    }
+
+}

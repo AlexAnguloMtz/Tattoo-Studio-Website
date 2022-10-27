@@ -1,7 +1,9 @@
-import { ILink } from "../components/Nav/NavLinks/NavLinks";
 import { Route } from "react-router-dom";
 import { Home } from "../pages/Home/Home";
 import { Artist } from "../pages/Artist/Artist";
+import { ILink } from "../components/Nav/NavLink/NavLink";
+import { Gallery } from "../pages/Gallery/Gallery";
+import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
 
 export const theLinks: ILink[] = [
     {
@@ -13,6 +15,11 @@ export const theLinks: ILink[] = [
         path: '/artista',
         text: 'Artista',
         element: <Artist />
+    },
+    {
+        path: '/galeria',
+        text: 'Galería',
+        element: <Gallery />
     }
 ];
 
@@ -23,5 +30,15 @@ export const routes = (): JSX.Element[] => {
 }
 
 const renderRoute = (link: ILink): JSX.Element => {
-    return <Route key={link.path} path={link.path} element={link.element} />
+    return (
+        <Route
+            key={link.path}
+            path={link.path}
+            element={
+                <ScrollToTop>
+                    {link.element}
+                </ScrollToTop>
+            }
+        />
+    );
 }

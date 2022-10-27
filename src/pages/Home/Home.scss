@@ -1,1 +1,14 @@
-.home {}
+@import '../../scss-common/Common.scss';
+
+.home {
+
+    &__gallery-button {
+        font-size: 1.3em;
+        padding: 0.7em 1em;
+    }
+
+    &.gallery-button-wrapper {
+        height: auto;
+    }
+
+}

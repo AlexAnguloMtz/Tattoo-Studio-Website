@@ -1,0 +1,9 @@
+@import '../../scss-common/Common.scss';
+
+.page-section__content {
+    @include flex-column-center-center;
+    font-size: 2em;
+    width: 80%;
+    line-height: 1.6em;
+
+}

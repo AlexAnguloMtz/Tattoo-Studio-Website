@@ -1,0 +1,75 @@
+@import '../../../scss-common/Common.scss';
+
+.hero {
+
+    height: 360px;
+    margin-top: $nav-height;
+    background: url('../../../pictures/Vikings/axes-first-crop-and-scaling.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &__overlay {
+        height: 100%;
+        @include flex-column-center-center;
+        background-color: rgba(0, 0, 0, 0.2);
+        position: relative;
+    }
+
+    &__heading {
+        font-size: 3em;
+    }
+
+    & .hero__arrow {
+        position: absolute;
+        bottom: 1.5em;
+    }
+
+}
+
+@media screen and (min-width: 395px) and (orientation: portrait) {
+    .hero {
+        background-position: center 10%;
+    }
+}
+
+@media screen and (min-width: 490px) and (orientation: portrait) {
+    .hero {
+        min-height: 490px;
+    }
+}
+
+@media screen and (min-width: 550px) and (orientation: portrait) {
+    .hero {
+        min-height: 570px;
+    }
+}
+
+@media screen and (min-width: 650px) and (orientation: portrait) {
+    .hero {
+        min-height: 730px;
+    }
+}
+
+@media screen and (min-width: 800px) and (orientation: portrait) {
+    .hero {
+        min-height: 840px;
+        background-image: url('../../../pictures/Vikings/axes-high-quality-cropped.jpg');
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .hero {
+        margin: 0;
+        height: 100%;
+        background-image: url('../../../pictures/Vikings/axes-high-quality-cropped.jpg');
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .hero {
+        margin: 0;
+        height: 100%;
+        background-position: top 0% center;
+    }
+}

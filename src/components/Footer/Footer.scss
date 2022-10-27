@@ -1,7 +1,8 @@
 @import '../../scss-common/Common.scss';
 
 .footer {
-    height: 95%;
+    height: 100%;
+    color: black;
     background-color: white;
     font-size: 1.4em;
     display: flex;
@@ -45,7 +46,7 @@
         position: absolute;
         top: $nav-height + 30px;
         clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-        transition: clip-path 1500ms ease;
+        transition: clip-path 2000ms ease;
     }
 
     .social-media {

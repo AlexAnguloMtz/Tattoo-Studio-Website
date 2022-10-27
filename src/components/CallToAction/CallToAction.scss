@@ -1,0 +1,19 @@
+@import '../../scss-common/Common.scss';
+
+.call-to-action {
+    font-family: $main-headers-font-style;
+    color: white;
+    border-style: solid;
+    border-color: white;
+
+    $transition-duration: 200ms;
+    transition:
+        color $transition-duration ease,
+        background-color $transition-duration ease;
+
+    &:hover {
+        background: white;
+        color: black;
+    }
+
+}

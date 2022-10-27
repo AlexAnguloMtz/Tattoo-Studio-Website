@@ -1,4 +1,36 @@
-$nav-height: 90px;
+$nav-height: 50px;
 $main-headers-font-style: Dosis, Prata, Roboto, Arial;
 $main-headers-font-size: 2.2em;
-$emphasis-font-color: #D6D944;
+$emphasis-color: #D6D944;
+
+@mixin absolute-four-corners {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+@mixin flex-column-center-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-row-center {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flex-row-center-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin circle($diameter) {
+    width: $diameter;
+    height: $diameter;
+    border-radius: 50%;
+}

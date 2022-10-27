@@ -1,8 +1,8 @@
 .hamburguer {
-    $side: 40px;
+    $side: 30px;
     $timing: 250ms;
     $timing-function: ease;
-    $distance-between-lines: -9px;
+    $distance-between-lines: -7px;
 
     width: $side;
     height: $side;
@@ -14,7 +14,7 @@
     z-index: 1;
 
     .line {
-        height: 3px;
+        height: 2px;
         border-radius: 3px;
         background: white;
     }

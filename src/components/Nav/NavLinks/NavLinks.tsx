@@ -1,28 +1,16 @@
 import './NavLinks.scss';
-import './NavLink.scss';
-import { Link } from "react-router-dom";
+import { ILink, NavLink } from '../NavLink/NavLink';
 
-export const NavLinks: React.FC<Props> = ({ isVisible, links }) => {
+export const NavLinks: React.FC<Props> = ({ isVisible, links, onLinkClick }) => {
     return (
         <ul className={`nav__links ${isVisible ? ' visible' : ''}`}>
-            {links.map(link => renderLink(link.path, link.text))}
-        </ul>);
-}
-
-export interface ILink {
-    path: string,
-    text: string,
-    element: JSX.Element
+            {links.map(link => <NavLink onClick={onLinkClick} link={link}></NavLink>)}
+        </ul>
+    );
 }
 
 interface Props {
     isVisible: boolean,
-    links: ILink[]
-}
-
-const renderLink = (path: string, text: string): JSX.Element => {
-    return (
-        <li className='nav__li ' key={text}>
-            <Link className='nav__link ' to={path}>{text}</Link>
-        </li>);
+    links: ILink[],
+    onLinkClick: () => void
 }

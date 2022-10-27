@@ -1,0 +1,10 @@
+.anchor {
+    text-decoration: none;
+    color: inherit;
+
+    &.underlined {
+        text-decoration: underline;
+        text-decoration-color: inherit;
+    }
+
+}

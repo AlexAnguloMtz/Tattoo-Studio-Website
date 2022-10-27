@@ -1,0 +1,26 @@
+.fading {
+    $transition-duration: 800ms;
+    $transition-timing-function: ease;
+    opacity: 0;
+    transform: translateY(50px);
+    transition:
+        opacity $transition-duration $transition-timing-function,
+        transform $transition-duration $transition-timing-function;
+
+    &.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.open {
+    clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+    transition: none;
+
+    &.visible {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        transition: clip-path 500ms ease;
+    }
+
+}

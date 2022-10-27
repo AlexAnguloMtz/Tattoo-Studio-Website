@@ -1,4 +1,4 @@
-import { MutableRefObject, useRef, useState } from "react"
+import { MutableRefObject } from "react"
 import { useIntersectionObserver } from "usehooks-ts"
 
 export const useSimpleIntersectionObserver = ({ ref, threshold, freezeOnceVisible = false }: Props) => {

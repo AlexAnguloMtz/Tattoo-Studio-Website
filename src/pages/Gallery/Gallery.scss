@@ -1,0 +1,27 @@
+@import '../../scss-common/Common.scss';
+
+.gallery {
+
+    &__hero {
+        margin-top: $nav-height;
+    }
+
+    background-color: black;
+    padding: 6em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6em;
+
+    .image {
+        width: 260px;
+        height: 400px;
+        outline: 6px solid white;
+    }
+
+    .contain {
+        object-fit: contain;
+    }
+
+}

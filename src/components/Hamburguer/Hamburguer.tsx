@@ -2,18 +2,10 @@ import { useState } from 'react';
 import { Button } from '../Button/Button';
 import './Hamburguer.scss';
 
-export const Hamburguer: React.FC<Props> = ({ onClick }) => {
-
-    const [isCloseButton, setIsCloseButton] = useState(false);
-
-    const handleClick = () => {
-        setIsCloseButton(!isCloseButton);
-        onClick();
-    }
-
+export const Hamburguer: React.FC<Props> = ({ onClick, isCloseButton }) => {
     return (
         <Button
-            onClick={handleClick}
+            onClick={onClick}
             className={`hamburguer ${isCloseButton ? 'close' : ''}`}>
             <div className='line center'>
                 <div className='line inner-line top'></div>
@@ -24,5 +16,6 @@ export const Hamburguer: React.FC<Props> = ({ onClick }) => {
 }
 
 interface Props {
-    onClick: () => void
+    onClick: () => void,
+    isCloseButton: boolean
 }

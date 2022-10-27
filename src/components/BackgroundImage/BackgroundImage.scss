@@ -1,0 +1,18 @@
+.background-img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &.full {
+        height: 100%;
+    }
+
+    &.mid {
+        height: 50%;
+    }
+
+    &.small {
+        height: 20%;
+    }
+
+}
