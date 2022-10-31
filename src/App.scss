@@ -1,0 +1,10 @@
+.app {
+  position: relative;
+  color: white;
+}
+
+.app .landscape-only {
+  @media (orientation: portrait) {
+    display: none;
+  }
+}

@@ -3,30 +3,37 @@ $main-headers-font-style: Dosis, Prata, Roboto, Arial;
 $main-headers-font-size: 2.2em;
 $emphasis-color: #D6D944;
 
-@mixin absolute-four-corners {
-    position: absolute;
+@mixin four-corners {
     left: 0;
     right: 0;
-    bottom: 0;
     top: 0;
+    bottom: 0;
 }
 
-@mixin flex-column-center-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+@mixin fixed-four-corners {
+    @include four-corners;
+    position: fixed;
 }
 
-@mixin flex-row-center {
-    display: flex;
-    justify-content: center;
+@mixin absolute-four-corners {
+    @include four-corners;
+    position: absolute;
 }
 
 @mixin flex-row-center-center {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@mixin flex-column-center-center {
+    @include flex-row-center-center;
+    flex-direction: column;
+}
+
+@mixin flex-row-center {
+    display: flex;
+    justify-content: center;
 }
 
 @mixin circle($diameter) {
