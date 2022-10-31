@@ -1,15 +1,11 @@
 import './App.scss';
 import { Nav } from './components/Nav/Nav';
-import { BrowserRouter, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes } from "react-router-dom";
 import { theLinks, routes } from './routing/routing';
 import { Footer } from './components/Footer/Footer';
-import { useState } from 'react';
 import { FullScreenLayer } from './components/FullScreenLayer/FullScreenLayer';
 
 function App() {
-
-  const [isNavExpanded, setLinksExpanded] = useState(false);
-
   return (
     <div className="app">
       <BrowserRouter>
