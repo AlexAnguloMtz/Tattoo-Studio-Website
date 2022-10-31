@@ -8,7 +8,7 @@ import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
 export const theLinks: ILink[] = [
     {
         path: '/',
-        text: 'Home',
+        text: 'Inicio',
         element: <Home />
     },
     {
@@ -20,6 +20,11 @@ export const theLinks: ILink[] = [
         path: '/galeria',
         text: 'Galería',
         element: <Gallery />
+    },
+    {
+        path: '/contacto',
+        text: 'Contacto',
+        element: <></>
     }
 ];
 

@@ -16,7 +16,8 @@ export const Gallery = () => {
             <PageSection
                 className="gallery__hero"
                 img={imgOne}
-                size="small">
+                size="small"
+                animated={false}>
                 <h1>Galería</h1>
             </PageSection>
             <main className="gallery">

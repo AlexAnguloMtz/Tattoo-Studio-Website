@@ -17,3 +17,11 @@
     }
 
 }
+
+@media screen and (min-width: 800px) {
+    .nav__links {
+        position: static;
+        flex-direction: row;
+        clip-path: none;
+    }
+}

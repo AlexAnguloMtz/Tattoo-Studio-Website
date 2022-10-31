@@ -1,0 +1,6 @@
+@import '../../scss-common/Common.scss';
+
+.profile-pic {
+    @include circle(80px);
+    object-fit: cover;
+}

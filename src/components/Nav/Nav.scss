@@ -1,7 +1,7 @@
 @import '../../scss-common/Common.scss';
 
 .nav {
-    background-color: black;
+    background-color: transparent;
     height: $nav-height;
     padding: 0 1.2em;
     position: fixed;
@@ -11,5 +11,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1;
+    z-index: 2;
+    transition: background-color 400ms ease;
+
+    &.colored {
+        background-color: black;
+    }
+
+
+}
+
+@media screen and (min-width: 800px) {
+    .nav__hamburguer {
+        display: none;
+    }
 }

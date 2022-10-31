@@ -1,0 +1,16 @@
+.reviews {
+    color: black;
+    padding: 1em 0;
+
+    &__header {
+        text-align: center;
+        font-size: 2em;
+    }
+
+    &__carousel {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+}

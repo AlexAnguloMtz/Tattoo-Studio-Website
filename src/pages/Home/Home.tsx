@@ -3,32 +3,35 @@ import './Home.scss';
 import { ScrollAnchor } from '../../components/ScrollAnchor/ScrollAnchor';
 import { BrandDescription } from './BrandDescription/BrandDescription';
 import { Hero } from './Hero/Hero';
-import { BackgroundImage } from '../../components/BackgroundImage/BackgroundImage';
-import { Overlay } from '../../components/Overlay/Overlay';
-import { AnimatedEntrance } from '../../components/AnimatedEntrance/AnimatedEntrance';
 import { CallToAction } from '../../components/CallToAction/CallToAction';
-import { Animation } from '../../components/AnimatedEntrance/AnimatedEntrance';
 import imgOne from '../../pictures/Vikings/ship-small.jpg';
 import imgTwo from '../../pictures/black-shirt-small.jpg';
 import imgThree from '../../pictures/viking-cropped.jpg';
 import imgFour from '../../pictures/tatto-flowers.jpg';
 import { PageSection } from '../../components/PageSection/PageSection';
 import { ContactCard } from '../../components/ContactCard/ContactCard';
+import { Anchor } from '../../components/Anchor/Anchor';
 
 const ourServicesText: string = `
     Con nuestro servicio de tatuajes totalmente
-    personalizados y a la medida, volveremos realidad
-    tu visión. Siempre manteniéndonos como uno de 
-    los mejores estudios de la ciudad.
+    personalizados volveremos realidad cualquier diseño que eligas.
+    Realizamos trabajos únicos, lo que nos ha
+    posicionado como uno de los mejores estudios de la región. 
 `;
 
-const tattoTypesWeHandle: string = `
-    En Vallhala Tattos manejamos cualquier tipo de tatuaje. 
-    El límite es tu imaginación.
-    Contáctanos para cotizar y agendar tu cita. 
-`;
+const tattoTypesWeHandle = (): JSX.Element => {
+    return (
+        <p>
+            Somos especialistas en el estilo Blackwork.
+            Además manejamos cualquier tipo de tatuaje.
+            El límite es tu imaginación.
+            Contáctanos para cotizar y agendar tu cita.
+            Conoce a nuestro artista
+            <Anchor underlined href=""> aquí.</Anchor>
+        </p>
+    );
+}
 
-const thresholdForTextVisibility: number = 0.6;
 
 export const Home = () => {
 
@@ -64,7 +67,7 @@ export const Home = () => {
             <PageSection
                 img={imgThree}
                 size={'full'}>
-                <p>{tattoTypesWeHandle}</p>
+                <p>{tattoTypesWeHandle()}</p>
             </PageSection>
 
             <PageSection
