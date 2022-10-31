@@ -1,8 +1,7 @@
-import { FC } from "react";
 import { ProfilePicture } from "../../ProfilePicture/ProfilePicture";
 import './Review.scss';
 
-export const Review = ({ review }: { review: ReviewProps }) => {
+export const Review = ({ review }: { review: IReview }) => {
     return (
         <div className="review">
             <ProfilePicture img={review.profilePic} />
@@ -12,7 +11,7 @@ export const Review = ({ review }: { review: ReviewProps }) => {
     );
 }
 
-export interface ReviewProps {
+export interface IReview {
     user: string,
     text: string,
     profilePic: string

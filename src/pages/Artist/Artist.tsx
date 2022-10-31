@@ -1,6 +1,3 @@
-import { MutableRefObject, useRef } from "react";
-import { Underlined } from "../../components/Underlined/Underlined";
-import { useSimpleIntersectionObserver } from "../../custom-hooks/useSimpleIntersectionObserver";
 import './Artist.scss';
 
 import { PageSection } from "../../components/PageSection/PageSection";
@@ -8,7 +5,6 @@ import { CallToAction } from "../../components/CallToAction/CallToAction";
 import imgOne from "../../pictures/gallery-small.jpg";
 import imgTwo from "../../pictures/back-neck-small.jpg";
 import { ArtistMain } from "./ArtistMain";
-import Carousel from 'react-material-ui-carousel'
 import { Reviews } from "../../components/Reviews/Reviews";
 
 export const Artist = () => {

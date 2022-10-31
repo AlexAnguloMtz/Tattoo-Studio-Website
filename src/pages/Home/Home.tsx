@@ -4,34 +4,13 @@ import { ScrollAnchor } from '../../components/ScrollAnchor/ScrollAnchor';
 import { BrandDescription } from './BrandDescription/BrandDescription';
 import { Hero } from './Hero/Hero';
 import { CallToAction } from '../../components/CallToAction/CallToAction';
-import imgOne from '../../pictures/Vikings/ship-small.jpg';
-import imgTwo from '../../pictures/black-shirt-small.jpg';
-import imgThree from '../../pictures/viking-cropped.jpg';
-import imgFour from '../../pictures/tatto-flowers.jpg';
+import firstImg from '../../pictures/black-shirt-small.jpg';
+import secondImg from '../../pictures/viking-cropped.jpg';
+import thirdImg from '../../pictures/tatto-flowers.jpg';
 import { PageSection } from '../../components/PageSection/PageSection';
 import { ContactCard } from '../../components/ContactCard/ContactCard';
 import { Anchor } from '../../components/Anchor/Anchor';
-
-const ourServicesText: string = `
-    Con nuestro servicio de tatuajes totalmente
-    personalizados volveremos realidad cualquier diseño que eligas.
-    Realizamos trabajos únicos, lo que nos ha
-    posicionado como uno de los mejores estudios de la región. 
-`;
-
-const tattoTypesWeHandle = (): JSX.Element => {
-    return (
-        <p>
-            Somos especialistas en el estilo Blackwork.
-            Además manejamos cualquier tipo de tatuaje.
-            El límite es tu imaginación.
-            Contáctanos para cotizar y agendar tu cita.
-            Conoce a nuestro artista
-            <Anchor underlined href=""> aquí.</Anchor>
-        </p>
-    );
-}
-
+import { OurServices } from './OurServices/OurServices';
 
 export const Home = () => {
 
@@ -49,14 +28,10 @@ export const Home = () => {
                 <ScrollAnchor ref={ref} />
             </BrandDescription>
 
-            <PageSection
-                img={imgOne}
-                size={'full'}>
-                {<p>{ourServicesText}</p>}
-            </PageSection>
+            <OurServices />
 
             <PageSection
-                img={imgTwo}
+                img={firstImg}
                 animated={false}
                 size={'mid'}>
                 <CallToAction
@@ -65,16 +40,29 @@ export const Home = () => {
             </PageSection>
 
             <PageSection
-                img={imgThree}
+                img={secondImg}
                 size={'full'}>
                 <p>{tattoTypesWeHandle()}</p>
             </PageSection>
 
             <PageSection
-                img={imgFour}
+                img={thirdImg}
                 size={'full'}>
                 <ContactCard />
             </PageSection>
         </>
+    );
+}
+
+const tattoTypesWeHandle = (): JSX.Element => {
+    return (
+        <p>
+            Somos especialistas en el estilo Blackwork.
+            Además manejamos cualquier tipo de tatuaje.
+            El límite es tu imaginación.
+            Contáctanos para cotizar y agendar tu cita.
+            Conoce a nuestro artista
+            <Anchor underlined href=""> aquí.</Anchor>
+        </p>
     );
 }
