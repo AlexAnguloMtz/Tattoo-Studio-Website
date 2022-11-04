@@ -1,14 +1,24 @@
 @import '../../../scss-common/Common.scss';
 
+$breakpoint: 830px;
+
 .our-services {
 
-    @include flex-row-space_evenly-center;
     background-image: url('../../../pictures/background-1.jpg');
     background-repeat: no-repeat;
     background-color: rgb(21, 22, 22);
     background-size: 100% 100%;
     padding: 0 0.3em;
     overflow: hidden;
+
+    &.desktop {
+
+        display: none;
+
+        @media screen and (min-width: $breakpoint) {
+            @include flex-row-space_evenly-center;
+        }
+    }
 
     &__overlay {
         @include flex-row-space_evenly-center;
@@ -49,4 +59,10 @@
         transform: translateX(0);
     }
 
+}
+
+.mobile {
+    @media screen and (min-width: $breakpoint) {
+        display: none;
+    }
 }
