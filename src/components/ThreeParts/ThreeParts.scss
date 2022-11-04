@@ -53,7 +53,7 @@
     .three-images {
 
         &>* {
-            transition: transform 500ms ease-out;
+            transition: transform 700ms ease-in-out;
         }
 
         .left,
