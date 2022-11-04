@@ -9,8 +9,13 @@
     gap: 2em;
     text-align: left;
 
-    &__text {
-        font-size: 1.2em;
+    &__link {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    &.facebook {
+        transform: translateX(5px);
     }
 
 }

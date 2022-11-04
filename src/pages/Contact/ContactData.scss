@@ -1,0 +1,9 @@
+@import '../../scss-common/Common.scss';
+
+.contact__data {
+    @include flex-column-center-center;
+    max-width: 500px;
+    gap: 2em;
+    padding: 3em 3em;
+    font-size: clamp(1.3em, 1em + 1vw, 1.5em);
+}
