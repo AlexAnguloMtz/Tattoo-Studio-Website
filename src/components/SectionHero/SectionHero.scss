@@ -1,0 +1,13 @@
+@import '../../scss-common/Common.scss';
+
+.section__hero {
+
+    height: clamp(35%, 35% + 10vw, 50%);
+
+    & .section__hero {
+        @include flex-row-center-center;
+        font-weight: 100;
+        font-size: clamp(2.5rem, 4vw + 1rem, 5rem);
+    }
+
+}

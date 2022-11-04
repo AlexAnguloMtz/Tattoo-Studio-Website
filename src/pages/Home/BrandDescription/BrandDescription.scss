@@ -1,52 +1,66 @@
 @import '../../../scss-common/Common.scss';
 
+$breakpoint: 1100px;
+
 .brand-description {
-    display: flex;
-    justify-content: center;
+
+    @include flex-row-space_evenly-center;
     min-height: 400px;
     position: relative;
     background: black;
-    padding: 3em 2em;
+    padding: 6em 2em;
+    overflow: hidden;
 
     &__content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2em;
+        @include flex-column-center-center;
     }
 
     &__header.main-header {
         width: 90%;
-        font-size: $main-headers-font-size;
+        font-size: 2.8em;
         font-family: $main-headers-font-style;
         text-align: center;
     }
 
     &__text {
-        font-size: 1.4em;
+        font-size: clamp(1.4rem, 0.5vw + 1rem, 1.8rem);
         line-height: 1.8em;
+        max-width: 560px;
+        text-align: justify;
     }
 
-    &__img {
-        width: 800px;
-        display: none;
+    &.brand-description__parallax {
+        @media screen and (min-width: 1250px) {
+            background-position: center -100px;
+        }
+
+        @media screen and (min-width: 1450px) {
+            background-position: center -200px;
+        }
     }
 
 }
 
-@media screen and (min-width: 500px) {
-    .brand-description__header.main-header {
-        font-size: 2.8em;
+@media screen and (min-width: $breakpoint) {
+    .brand-description {
+
+        &>* {
+            $duration: 800ms;
+            transition:
+                transform $duration ease,
+                opacity $duration ease;
+        }
+
+        &__content {
+            opacity: 0;
+            transform: translateY(100px);
+        }
+
     }
 
-    .brand-description__text {
-        font-size: 1.5em;
+    .brand-description.on-screen>* {
+        opacity: 1;
+        transform: none;
     }
-}
 
-@media screen and (min-width: 1400px) {
-    .brand-description__img {
-        display: block;
-    }
 }

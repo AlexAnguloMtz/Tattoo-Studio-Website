@@ -1,10 +1,15 @@
 import './NavLinks.scss';
 import { ILink, NavLink } from '../NavLink/NavLink';
 
-export const NavLinks: React.FC<Props> = ({ isVisible, links, onLinkClick }) => {
+export const NavLinks: React.FC<Props> = ({
+    isVisible,
+    links,
+    onLinkClick,
+    selectedPath
+}) => {
     return (
         <ul className={`nav__links ${isVisible ? ' visible' : ''}`}>
-            {links.map(link => <NavLink onClick={onLinkClick} link={link}></NavLink>)}
+            {links.map(link => toLink(link, onLinkClick, selectedPath))}
         </ul>
     );
 }
@@ -12,5 +17,19 @@ export const NavLinks: React.FC<Props> = ({ isVisible, links, onLinkClick }) => 
 interface Props {
     isVisible: boolean,
     links: ILink[],
-    onLinkClick: () => void
+    onLinkClick: (path: string) => void,
+    selectedPath: string
+}
+
+const toLink = (
+    link: ILink,
+    onClick: (path: string) => void,
+    selectedPath: string
+) => {
+    return (
+        <NavLink
+            isSelected={selectedPath === link.path}
+            onClick={onClick}
+            link={link} />
+    );
 }

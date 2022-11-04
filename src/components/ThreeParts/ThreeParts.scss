@@ -1,0 +1,90 @@
+@import '../../scss-common/Common.scss';
+
+
+.three-images {
+
+    @include flex-row-space_evenly-center;
+    overflow: hidden;
+    height: 100%;
+    background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
+
+    &__image {
+        object-fit: cover;
+    }
+
+    &__central-animated-entrance {
+        @include flex-column-center-center;
+        gap: 2em;
+    }
+
+    &__text {
+        @include flex-row-center-center;
+        display: block;
+        max-width: 290px;
+        font-size: 2em;
+        line-height: 1.5em;
+        text-align: center;
+    }
+
+    &__call-to-action {
+        font-size: 1.8em;
+        padding: 0.5em 1em;
+    }
+
+    .left,
+    .right {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 800px) {
+    .three-images {
+        .left {
+            display: block;
+            width: 50%;
+            height: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: 1100px) {
+
+    .three-images {
+
+        &>* {
+            transition: transform 500ms ease-out;
+        }
+
+        .left,
+        .right {
+            box-shadow: 10px 10px 0 0 rgb(227, 222, 222);
+            $width: clamp(270px, 270px + 4vw, 400px);
+            $ratio: 1.4;
+            width: $width;
+            height: calc($width * $ratio);
+        }
+
+        .right {
+            display: block;
+        }
+
+        .left {
+            transform: translateX(-100vw);
+        }
+
+        .right {
+            transform: translateX(100vw);
+        }
+
+        &__central {
+            transform: translateY(100vh);
+        }
+
+        &.on-screen * {
+            transform: none;
+        }
+
+    }
+
+}

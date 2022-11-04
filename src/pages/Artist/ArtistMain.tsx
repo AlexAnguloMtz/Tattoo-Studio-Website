@@ -32,7 +32,7 @@ export const ArtistMain: FC = () => {
 const artistTitle = (): JSX.Element => {
     return (
         <>
-            “Soy
+            “Conoce a
             <Underlined text={'André,'} className='variable-width' />
             tu próximo
             <Underlined text={'tattoo'} className='variable-width' />

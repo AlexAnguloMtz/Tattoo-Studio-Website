@@ -1,14 +1,37 @@
 @import '../../scss-common/Common.scss';
 
-.home {
+.home-parallax.home-parallax-one {
 
-    &__gallery-button {
-        font-size: 1.3em;
-        padding: 0.7em 1em;
+    @media screen and (min-width: 850px) {
+        height: 600px;
+        background-position: center -35vw;
     }
 
-    &.gallery-button-wrapper {
-        height: auto;
+    @media screen and (min-width: 1200px) {
+        background-image: url('../../pictures/planets.jpg') !important;
+        background-position: center -25vw;
+    }
+
+    @media screen and (min-width: 1400px) {
+        background-position: center -30vw;
+    }
+
+    @media screen and (min-width: 1600px) {
+        background-position: center -33vw;
+    }
+
+}
+
+.home-parallax.home-parallax-two {
+
+    display: none;
+
+    @media screen and (min-width: 830px) {
+        display: block;
+    }
+
+    @media screen and (min-width: 1400px) {
+        background-position: center -10vw;
     }
 
 }

@@ -1,9 +1,66 @@
+$lines-animation-duration: 600ms;
+$lines-animation-delay: 0ms;
+$lines-animation-timing-function: ease;
+
 .contact-card {
-    width: 95%;
+
+    width: min(95%, 600px);
     text-align: center;
     line-height: 4em;
-    border-style: solid;
-    border-color: inherit;
-    border-width: 1px;
     font-size: 1em;
+    border: none;
+    position: relative;
+
+    &__animated-line {
+        background-color: white;
+        position: absolute;
+
+        &.top,
+        &.bottom {
+            width: 0;
+            height: 1px;
+            transition: width $lines-animation-duration $lines-animation-timing-function $lines-animation-delay;
+        }
+
+        &.top {
+            top: 0;
+            left: 0;
+        }
+
+        &.bottom {
+            bottom: 0;
+            right: 0;
+        }
+
+        &.left,
+        &.right {
+            width: 1px;
+            height: 0;
+            transition: height $lines-animation-duration $lines-animation-timing-function $lines-animation-delay;
+        }
+
+        &.left {
+            bottom: 0;
+            left: 0;
+        }
+
+        &.right {
+            top: 0;
+            right: 0;
+        }
+
+    }
+
+    &.on-screen {
+
+        .top,
+        .bottom {
+            width: 100%;
+        }
+
+        .left,
+        .right {
+            height: 100%;
+        }
+    }
 }

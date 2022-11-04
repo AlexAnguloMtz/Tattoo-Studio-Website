@@ -3,14 +3,20 @@ import './Home.scss';
 import { ScrollAnchor } from '../../components/ScrollAnchor/ScrollAnchor';
 import { BrandDescription } from './BrandDescription/BrandDescription';
 import { Hero } from './Hero/Hero';
-import { CallToAction } from '../../components/CallToAction/CallToAction';
-import firstImg from '../../pictures/black-shirt-small.jpg';
-import secondImg from '../../pictures/viking-cropped.jpg';
 import thirdImg from '../../pictures/tatto-flowers.jpg';
+import leftImg from '../../pictures/blackwork-three.jpg';
+import rightImg from '../../pictures/blackwork-one.jpg';
+import centralImg from '../../pictures/blackwork-two.jpg';
+import parallaxBackground from '../../pictures/planets-cropped-2.jpg';
+import parallaxBackgroundTwo from '../../pictures/Vikings/ship.jpg';
 import { PageSection } from '../../components/PageSection/PageSection';
 import { ContactCard } from '../../components/ContactCard/ContactCard';
-import { Anchor } from '../../components/Anchor/Anchor';
+import { Reviews } from '../../components/Reviews/Reviews';
+import { OurTattoos } from './OurTattoos/OurTattoos';
 import { OurServices } from './OurServices/OurServices';
+import { ThreeParts } from '../../components/ThreeParts/ThreeParts';
+import { Parallax } from '../../components/Parallax/Parallax';
+import { invitationToGallery } from './data';
 
 export const Home = () => {
 
@@ -30,39 +36,37 @@ export const Home = () => {
 
             <OurServices />
 
-            <PageSection
-                img={firstImg}
-                animated={false}
-                size={'mid'}>
-                <CallToAction
-                    className='home__gallery-button'
-                    text={'Galería'} />
-            </PageSection>
+            <ThreeParts
+                leftImg={leftImg}
+                leftAlt={'tattoo-in-the-back'}
+                rightImg={rightImg}
+                rightAlt={'tattoo-in-the-arm'}
+                text={invitationToGallery}
+                centralImg={centralImg}
+                callToActionText='Galeria'
+            />
 
-            <PageSection
-                img={secondImg}
-                size={'full'}>
-                <p>{tattoTypesWeHandle()}</p>
-            </PageSection>
+            <Parallax
+                backgroundImage={parallaxBackground}
+                className='home-parallax home-parallax-one'
+            />
+
+            <OurTattoos />
+
+            <Reviews />
+
+            <Parallax
+                backgroundImage={parallaxBackgroundTwo}
+                className='home-parallax home-parallax-two'
+            />
 
             <PageSection
                 img={thirdImg}
-                size={'full'}>
+                size={'full'}
+            >
                 <ContactCard />
             </PageSection>
-        </>
-    );
-}
 
-const tattoTypesWeHandle = (): JSX.Element => {
-    return (
-        <p>
-            Somos especialistas en el estilo Blackwork.
-            Además manejamos cualquier tipo de tatuaje.
-            El límite es tu imaginación.
-            Contáctanos para cotizar y agendar tu cita.
-            Conoce a nuestro artista
-            <Anchor underlined href=""> aquí.</Anchor>
-        </p>
+        </>
     );
 }

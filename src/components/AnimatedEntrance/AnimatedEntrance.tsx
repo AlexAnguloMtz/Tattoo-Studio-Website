@@ -4,7 +4,7 @@ import './AnimatedEntrance.scss';
 
 export enum Animation {
     Open = 'open',
-    Fading = 'fading'
+    Fading = 'fading',
 }
 
 export const AnimatedEntrance: FC<Props> = ({
@@ -12,7 +12,8 @@ export const AnimatedEntrance: FC<Props> = ({
     className = '',
     threshold,
     animation,
-    freezeOnceVisible = false
+    freezeOnceVisible = false,
+    gap = ''
 }) => {
 
     const ref = useRef(null);
@@ -21,6 +22,7 @@ export const AnimatedEntrance: FC<Props> = ({
 
     return (
         <div ref={ref}
+            style={{ gap: gap }}
             className={
                 `${animation} ${isVisible ? ' visible' : ''} ${className}`}>
             {children}
@@ -34,6 +36,7 @@ interface Props {
     className?: string,
     animation: Animation,
     threshold: number,
-    freezeOnceVisible?: boolean
+    freezeOnceVisible?: boolean,
+    gap?: string
 }
 

@@ -4,6 +4,7 @@ import { Artist } from "../pages/Artist/Artist";
 import { ILink } from "../components/Nav/NavLink/NavLink";
 import { Gallery } from "../pages/Gallery/Gallery";
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
+import { Contact } from "../pages/Contact/Contact";
 
 export const theLinks: ILink[] = [
     {
@@ -24,7 +25,7 @@ export const theLinks: ILink[] = [
     {
         path: '/contacto',
         text: 'Contacto',
-        element: <></>
+        element: <Contact />
     }
 ];
 

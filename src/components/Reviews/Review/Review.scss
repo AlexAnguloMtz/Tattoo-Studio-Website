@@ -1,21 +1,28 @@
 .review {
 
-    height: 60vh;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0 3em;
+    color: white;
     gap: 1em;
 
-    &__header {
-        font-size: 1.5em;
+    &__username {
+        font-size: 1.7em;
     }
 
     &__text {
-        font-size: 1.2em;
+        position: relative;
+        font-size: 1.5em;
         line-height: 2em;
+        z-index: 100;
+        color: rgb(249, 244, 244);
+
+        @media screen and (min-width: 1200px) {
+            font-size: 1.8em;
+        }
     }
 
 }

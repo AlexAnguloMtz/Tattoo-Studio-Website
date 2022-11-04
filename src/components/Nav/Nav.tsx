@@ -10,6 +10,8 @@ const NAV_COLOR_THRESHOLD: number = 10;
 
 export const Nav: FC<Props> = ({ links }) => {
 
+    const [selectedPath, setSelectedPath] = useState(links[0].path);
+
     const [isNavExpanded, setNavExpanded] = useState(false);
 
     const [isColored, setColored] = useState(false);
@@ -30,11 +32,20 @@ export const Nav: FC<Props> = ({ links }) => {
     }
 
     const handleHamburguerClick = () => {
+        handleNavEvent();
+    };
+
+    const handleLinkClick = (path: string) => {
+        setSelectedPath(path);
+        handleNavEvent();
+    };
+
+    const handleNavEvent = () => {
         toggleExpansion();
         if (!surpasedThresold()) {
             toggleColor();
         }
-    };
+    }
 
     const toggleExpansion = () => setNavExpanded(!isNavExpanded);
 
@@ -48,7 +59,8 @@ export const Nav: FC<Props> = ({ links }) => {
                 isCloseButton={isNavExpanded}
                 onClick={handleHamburguerClick} />
             <NavLinks
-                onLinkClick={handleHamburguerClick}
+                selectedPath={selectedPath}
+                onLinkClick={handleLinkClick}
                 links={links}
                 isVisible={isNavExpanded} />
         </nav>

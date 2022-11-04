@@ -7,19 +7,18 @@ import flowers from '../../pictures/flowers-cropped.jpeg';
 import miniDevil from '../../pictures/mini-devil-cropped.jpeg';
 import asian from '../../pictures/asian-cropped.jpeg';
 import { PageSection } from "../../components/PageSection/PageSection";
-import imgOne from '../../pictures/artist-small.jpg';
+import heroImg from '../../pictures/artist-small.jpg';
 import { AnimatedEntrance, Animation } from "../../components/AnimatedEntrance/AnimatedEntrance";
+import { SectionHero } from "../../components/SectionHero/SectionHero";
 
 export const Gallery = () => {
+
     return (
         <>
-            <PageSection
-                className="gallery__hero"
-                img={imgOne}
-                size="small"
-                animated={false}>
-                <h1>Galería</h1>
-            </PageSection>
+            <SectionHero
+                img={heroImg}
+                header="Galería" />
+
             <main className="gallery">
                 <AnimatedEntrance animation={Animation.Fading} threshold={0.5} freezeOnceVisible>
                     <img className="image" src={devil} alt="devil-tatto" />

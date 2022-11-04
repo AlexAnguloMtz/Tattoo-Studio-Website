@@ -3,16 +3,20 @@ import './Review.scss';
 
 export const Review = ({ review }: { review: IReview }) => {
     return (
-        <div className="review">
-            <ProfilePicture img={review.profilePic} />
-            <h1 className="review__header">{review.user}</h1>
+        <article className="review">
+            <ProfilePicture img={review.user.profilePic} />
+            <h1 className="review__username">{review.user.username}</h1>
             <p className="review__text">{review.text}</p>
-        </div>
+        </article>
     );
 }
 
-export interface IReview {
-    user: string,
-    text: string,
+export interface IUser {
+    username: string,
     profilePic: string
+}
+
+export interface IReview {
+    user: IUser,
+    text: string
 }

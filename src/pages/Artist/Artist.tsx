@@ -1,27 +1,18 @@
 import './Artist.scss';
-
 import { PageSection } from "../../components/PageSection/PageSection";
 import { CallToAction } from "../../components/CallToAction/CallToAction";
-import imgOne from "../../pictures/gallery-small.jpg";
 import imgTwo from "../../pictures/back-neck-small.jpg";
 import { ArtistMain } from "./ArtistMain";
-import { Reviews } from "../../components/Reviews/Reviews";
+import heroImg from "../../pictures/gallery-small.jpg";
+import { SectionHero } from '../../components/SectionHero/SectionHero';
 
 export const Artist = () => {
     return (
         <>
-            <PageSection
-                className="artist__hero"
-                img={imgOne}
-                size="small"
-                animated={false}>
-                <h1>Artista</h1>
-            </PageSection>
-
+            <SectionHero
+                img={heroImg}
+                header='Artista' />
             <ArtistMain />
-
-            <Reviews />
-
             <PageSection
                 img={imgTwo}
                 animated={false}

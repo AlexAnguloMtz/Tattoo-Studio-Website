@@ -13,7 +13,7 @@ export const CallToAction: FC<Props> = ({ text, className }) => {
 }
 
 interface Props {
-    text?: string,
+    text: string,
     className?: string
 }
 

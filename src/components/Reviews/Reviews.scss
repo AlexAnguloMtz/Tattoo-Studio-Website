@@ -1,10 +1,15 @@
 .reviews {
-    color: black;
-    padding: 1em 0;
 
-    &__header {
-        text-align: center;
-        font-size: 2em;
+    background-image: url('../../pictures/background-1.jpg');
+
+    &__carousel {
+        margin: 0 auto;
+        padding: 3em 0;
+        max-width: 700px;
+
+        @media screen and (min-width: 1200px) {
+            padding: 8em 0;
+        }
     }
 
 }

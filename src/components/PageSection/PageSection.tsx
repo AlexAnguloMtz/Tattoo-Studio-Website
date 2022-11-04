@@ -13,24 +13,18 @@ export const PageSection: FC<Props> = ({
     children,
     className = '',
     animated = true,
-    size = 'full'
+    size = 'full',
+    gap = ''
 }) => {
     return (
         <BackgroundImage
             className={className}
             img={img}
             size={size}>
-            <Overlay>
+            <Overlay gap={gap}>
                 {
-                    animated ?
-
-                        <AnimatedEntrance
-                            className='page-section__content'
-                            threshold={thresholdForTextVisibility}
-                            animation={Animation.Fading}>
-                            {children}
-                        </AnimatedEntrance>
-
+                    animated
+                        ? withAnimation(thresholdForTextVisibility, children, gap)
                         : <>{children}</>
                 }
             </Overlay>
@@ -40,8 +34,25 @@ export const PageSection: FC<Props> = ({
 
 interface Props {
     img: string,
-    children?: JSX.Element,
+    children?: JSX.Element | JSX.Element[],
     className?: string,
     animated?: boolean,
-    size: 'full' | 'mid' | 'small'
+    size?: 'full' | 'mid',
+    gap?: string
+}
+
+const withAnimation = (
+    threshold: number,
+    children: JSX.Element | JSX.Element[] | undefined,
+    gap: string
+) => {
+    return (
+        <AnimatedEntrance
+            className='page-section__content'
+            threshold={threshold}
+            animation={Animation.Fading}
+            gap={gap}>
+            {children}
+        </AnimatedEntrance>
+    );
 }

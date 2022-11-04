@@ -1,16 +1,21 @@
 @import '../../scss-common/Common.scss';
 
 .footer {
+
     height: 100%;
     color: black;
     background-color: white;
-    font-size: 1.4em;
+    font-size: 1.3em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 3em;
+    gap: 2.3em;
     position: relative;
+
+    @media screen and (min-width: 1200px) {
+        font-size: 1.5em;
+    }
 
     & * {
         font-family: $main-headers-font-style;
@@ -18,13 +23,33 @@
         text-align: center;
     }
 
+    &__logo {
+        @include circle(4em);
+        @include flex-column-center-center;
+        color: white;
+        background-color: black;
+        font-size: 3em;
+        opacity: 0;
+        transform: translateY(40px);
+        transition:
+            opacity 900ms ease,
+            transform 750ms ease;
+    }
+
     &.visible {
-        .phone {
+
+        .footer__logo {
+            opacity: 1;
+            transform: none;
+        }
+
+        .footer__phone {
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         }
 
-        .social-media .icon {
+        .footer__social-media .icon {
             opacity: 1;
+            cursor: pointer;
 
             &.ig,
             &.wh {
@@ -32,26 +57,25 @@
             }
         }
 
-        .address {
+        .footer__address {
             opacity: 1;
             transform: none;
         }
 
-        .navigation .link {
+        .footer__navigation .link {
             opacity: 1;
         }
     }
 
-    .phone {
-        position: absolute;
-        top: $nav-height + 30px;
+    &__phone {
         clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
         transition: clip-path 2000ms ease;
     }
 
-    .social-media {
+    &__social-media {
         display: flex;
         justify-content: center;
+        max-width: 700px;
 
         .icon {
             width: 20%;
@@ -74,9 +98,9 @@
 
     }
 
-    .address {
+    &__address {
         text-align: center;
-        width: 70%;
+        width: min(80%, 420px);
         line-height: 1.7;
         opacity: 0;
         transform: translateY(50px);
@@ -87,7 +111,7 @@
             transform $duration ease;
     }
 
-    .navigation {
+    &__navigation {
         position: absolute;
         bottom: 2em;
         display: flex;
@@ -100,6 +124,26 @@
             color: inherit;
             opacity: 0;
             transition: opacity 1400ms ease;
+            position: relative;
+
+            &::after {
+                content: '';
+                width: 100%;
+                height: 1px;
+                position: absolute;
+                background-color: black;
+                bottom: -5px;
+                left: 0;
+                clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+                transition: clip-path 300ms ease;
+            }
+
+            &:hover {
+                &::after {
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                }
+            }
+
         }
 
     }
