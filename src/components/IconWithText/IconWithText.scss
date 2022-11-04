@@ -1,0 +1,16 @@
+@import '../../scss-common/Common.scss';
+
+.icon-with-text {
+
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2em;
+    text-align: left;
+
+    &__text {
+        font-size: 1.2em;
+    }
+
+}

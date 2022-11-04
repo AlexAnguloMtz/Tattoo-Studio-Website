@@ -5,6 +5,7 @@ import { ILink } from "../components/Nav/NavLink/NavLink";
 import { Gallery } from "../pages/Gallery/Gallery";
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
 import { Contact } from "../pages/Contact/Contact";
+import { gmapsApiKey } from '../secrets/secrets';
 
 export const theLinks: ILink[] = [
     {
@@ -25,7 +26,7 @@ export const theLinks: ILink[] = [
     {
         path: '/contacto',
         text: 'Contacto',
-        element: <Contact />
+        element: <Contact gmapsApiKey={gmapsApiKey} />
     }
 ];
 

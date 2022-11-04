@@ -34,6 +34,12 @@ $emphasis-color: #D6D944;
     align-items: center;
 }
 
+@mixin flex-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
 @mixin flex-column-center-center {
     @include flex-row-center-center;
     flex-direction: column;

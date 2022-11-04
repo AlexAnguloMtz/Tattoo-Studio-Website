@@ -1,0 +1,17 @@
+@import '../../scss-common/Common.scss';
+
+.contact {
+
+    @include flex-column-center-center;
+    background-color: black;
+    color: white;
+
+    &__data {
+        @include flex-column-center-center;
+        max-width: 500px;
+        gap: 2em;
+        padding: 3em 3em;
+        font-size: 1em;
+    }
+
+}
