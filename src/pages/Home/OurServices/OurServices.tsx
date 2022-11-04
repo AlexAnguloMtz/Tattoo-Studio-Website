@@ -7,8 +7,6 @@ import { RefObject, useRef } from 'react';
 import { useSimpleIntersectionObserver } from '../../../custom-hooks/useSimpleIntersectionObserver';
 import { Overlay } from '../../../components/Overlay/Overlay';
 
-const breakpoint: number = 830;
-
 export const OurServices = () => {
 
     const ref = useRef<HTMLDivElement>(null);
