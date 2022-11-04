@@ -9,10 +9,6 @@
     padding: 0 0.3em;
     overflow: hidden;
 
-    & * {
-        transition: transform 700ms ease;
-    }
-
     &__overlay {
         @include flex-row-space_evenly-center;
         width: 100%;
@@ -20,13 +16,14 @@
         padding: 3em 0;
     }
 
+    &__img,
+    &__text {
+        transition: transform 700ms ease;
+    }
+
     &__img {
         width: 50%;
         transform: translateX(-100vw);
-    }
-
-    &__extra-img-one {
-        width: 200px;
     }
 
     &__text {
