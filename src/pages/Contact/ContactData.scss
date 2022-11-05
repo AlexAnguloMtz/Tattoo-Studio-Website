@@ -11,18 +11,16 @@
     .instagram,
     .whatsapp {
         border-bottom: 1px solid;
+        text-decoration: underline;
     }
 
     .facebook,
     .instagram,
     .whatsapp,
     .location {
-
-        &:hover {
-            transition:
-                background-color 600ms ease,
-                color 600ms ease;
-        }
+        transition:
+            background-color 600ms ease,
+            color 450ms ease;
     }
 
     .facebook:hover {
