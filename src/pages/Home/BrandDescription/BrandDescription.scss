@@ -30,12 +30,8 @@ $breakpoint: 1100px;
     }
 
     &.brand-description__parallax {
-        @media screen and (min-width: 1250px) {
-            background-position: center -100px;
-        }
-
         @media screen and (min-width: 1450px) {
-            background-position: center -200px;
+            background-position: center -220px;
         }
     }
 
@@ -45,7 +41,7 @@ $breakpoint: 1100px;
     .brand-description {
 
         &>* {
-            $duration: 800ms;
+            $duration: 700ms;
             transition:
                 transform $duration ease,
                 opacity $duration ease;

@@ -17,6 +17,7 @@ import { OurServices } from './OurServices/OurServices';
 import { ThreeParts } from '../../components/ThreeParts/ThreeParts';
 import { Parallax } from '../../components/Parallax/Parallax';
 import { invitationToGallery } from './data';
+import { portfolio } from '../../routing/routing';
 
 export const Home = () => {
 
@@ -43,7 +44,8 @@ export const Home = () => {
                 rightAlt={'tattoo-in-the-arm'}
                 text={invitationToGallery}
                 centralImg={centralImg}
-                callToActionText='Galeria'
+                callToActionText='Portafolio'
+                callToActionUrl={portfolio}
             />
 
             <Parallax

@@ -10,7 +10,7 @@ export const Anchor: FC<Props> = ({ children, href, underlined = false }) => {
 }
 
 interface Props {
-    children?: string | JSX.Element,
     href: string,
+    children?: string,
     underlined?: boolean
 }

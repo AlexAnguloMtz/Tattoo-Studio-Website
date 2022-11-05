@@ -1,19 +1,22 @@
 import { FC } from "react";
-import { Button } from "../Button/Button";
+import { Link } from 'react-router-dom'
 import './CallToAction.scss';
 
-export const CallToAction: FC<Props> = ({ text, className }) => {
+export const CallToAction: FC<Props> = ({ to = '', text, className }) => {
     return (
-        <Button
+        <Link
+            to={to}
             className={`call-to-action ${className}`}
-            onClick={() => { }}>
+        >
             {text}
-        </Button>
+        </Link>
     );
 }
 
 interface Props {
     text: string,
+    to?: string,
+    href?: string,
     className?: string
 }
 

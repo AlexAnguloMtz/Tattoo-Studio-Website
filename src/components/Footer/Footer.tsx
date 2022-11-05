@@ -5,7 +5,10 @@ import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { useRef } from 'react';
 import { useSimpleIntersectionObserver } from '../../custom-hooks/useSimpleIntersectionObserver';
-import { address, phone } from './data';
+import { address, phone } from '../../data/contact-info';
+import { theLinks } from '../../routing/routing';
+import { ILink } from '../Nav/NavLink/NavLink';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
 
@@ -30,15 +33,24 @@ export const Footer = () => {
                 {address}
             </p>
             <div className='footer__navigation'>
-                {links.map(link => <a key={link} className='link' href=''>{link}</a>)}
+                {links()}
             </div>
         </footer >
     );
 }
 
-const links: string[] = [
-    'Inicio',
-    'Galería',
-    'Artista',
-    'Contacto',
-];
+const links = (): JSX.Element[] => {
+    return theLinks.map(link => toAnchor(link));
+}
+
+const toAnchor = (link: ILink) => {
+    return (
+        <Link
+            key={link.path}
+            className={'link'}
+            to={link.path}
+        >
+            {link.text}
+        </Link>
+    );
+}

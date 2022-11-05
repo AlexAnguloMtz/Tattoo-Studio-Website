@@ -18,6 +18,7 @@ export const ThreeParts: FC<Props> = ({
     centralImg,
     text,
     callToActionText,
+    callToActionUrl,
     className = '',
     centralImgPosition = '',
     overlayOpacity = 0.4
@@ -45,7 +46,10 @@ export const ThreeParts: FC<Props> = ({
                             animation={Animation.Fading}
                             threshold={0.5}>
                             <p className="three-images__text">{text}</p>
-                            <CallToAction className="three-images__call-to-action" text={callToActionText} />
+                            <CallToAction
+                                className="three-images__call-to-action"
+                                to={callToActionUrl}
+                                text={callToActionText} />
                         </AnimatedEntrance>
                     </Overlay>
                 </BackgroundImage>
@@ -64,9 +68,10 @@ interface Props {
     rightAlt: string,
     centralImg: string,
     text: string,
-    centralImgPosition?: string,
     callToActionText: string,
+    callToActionUrl: string,
     className?: string,
+    centralImgPosition?: string,
     overlayOpacity?: number
 }
 

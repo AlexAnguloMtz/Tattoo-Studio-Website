@@ -6,8 +6,12 @@
     color: white;
     border-style: solid;
     border-color: white;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.8em;
+    padding: 0.5em 1em;
 
-    $transition-duration: 200ms;
+    $transition-duration: 300ms;
     transition:
         color $transition-duration ease,
         background-color $transition-duration ease;

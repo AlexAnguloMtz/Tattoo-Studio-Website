@@ -2,6 +2,7 @@ import { useWindowSize } from "usehooks-ts";
 import { CallToAction } from "../../../components/CallToAction/CallToAction";
 import { PageSection } from "../../../components/PageSection/PageSection";
 import secondImg from '../../../pictures/viking-cropped.jpg';
+import { artist } from "../../../routing/routing";
 import { ourTattoosText } from "./data";
 import './OurTattoos.scss';
 
@@ -30,6 +31,7 @@ const mobileLayout = () => {
             </p>
             <CallToAction
                 className="our-tattoos__call-to-action"
+                to={artist}
                 text="Conoce al artista"
             />
         </PageSection>

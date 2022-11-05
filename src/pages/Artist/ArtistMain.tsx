@@ -15,8 +15,6 @@ export const ArtistMain: FC = () => {
             ref={ref}
             className={`artist ${isTextVisible ? ' visible' : ''}`}>
 
-
-
             <h1 className="header">
                 {artistTitle()}
             </h1>
@@ -27,6 +25,7 @@ export const ArtistMain: FC = () => {
                 alt="artist" />
 
             <ArtistDescription />
+
         </section>
     );
 }

@@ -14,10 +14,6 @@ function App() {
         </Routes>
         <Footer />
       </HashRouter>
-      {/*<FullScreenLayer className='landscape-only'>
-        {<h1>La versión de escritorio sigue en construcción!
-          Te invitamos a visitar la página en un móvil</h1>}
-        </FullScreenLayer>*/}
     </div>
   );
 }

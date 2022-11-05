@@ -1,23 +1,20 @@
-import { ScrollToTop } from "../../components/ScrollToTop/ScrollToTop"
-import './Gallery.scss';
-import galleryImg from '../../pictures/gallery-small.jpg';
+import './Portfolio.scss';
 import dragon from '../../pictures/dragon-recolored-small.jpeg';
 import devil from '../../pictures/devil-cropped.jpeg';
 import flowers from '../../pictures/flowers-cropped.jpeg';
 import miniDevil from '../../pictures/mini-devil-cropped.jpeg';
 import asian from '../../pictures/asian-cropped.jpeg';
-import { PageSection } from "../../components/PageSection/PageSection";
 import heroImg from '../../pictures/artist-small.jpg';
 import { AnimatedEntrance, Animation } from "../../components/AnimatedEntrance/AnimatedEntrance";
 import { SectionHero } from "../../components/SectionHero/SectionHero";
 
-export const Gallery = () => {
+export const Portfolio = () => {
 
     return (
         <>
             <SectionHero
                 img={heroImg}
-                header="Galería" />
+                header="Portafolio" />
 
             <main className="gallery">
                 <AnimatedEntrance animation={Animation.Fading} threshold={0.5} freezeOnceVisible>

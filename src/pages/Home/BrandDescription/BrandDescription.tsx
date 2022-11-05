@@ -14,7 +14,7 @@ export const BrandDescription: FC<Props> = ({ children }) => {
 
     const ref = useRef(null);
 
-    const isContentOnScreen = useSimpleIntersectionObserver({ ref, threshold: 0.7 });
+    const isContentOnScreen = useSimpleIntersectionObserver({ ref, threshold: 0.5 });
 
     return (
         <>

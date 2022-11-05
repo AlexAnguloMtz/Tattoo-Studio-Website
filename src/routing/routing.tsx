@@ -2,29 +2,34 @@ import { Route } from "react-router-dom";
 import { Home } from "../pages/Home/Home";
 import { Artist } from "../pages/Artist/Artist";
 import { ILink } from "../components/Nav/NavLink/NavLink";
-import { Gallery } from "../pages/Gallery/Gallery";
+import { Portfolio } from "../pages/Portfolio/Portfolio";
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
 import { Contact } from "../pages/Contact/Contact";
 import { gmapsApiKey } from '../secrets/secrets';
 
+export const home: string = '/';
+export const artist: string = '/artista';
+export const portfolio: string = '/portafolio';
+export const contact: string = '/contact';
+
 export const theLinks: ILink[] = [
     {
-        path: '/',
+        path: home,
         text: 'Inicio',
         element: <Home />
     },
     {
-        path: '/artista',
+        path: artist,
         text: 'Artista',
         element: <Artist />
     },
     {
-        path: '/galeria',
-        text: 'Galería',
-        element: <Gallery />
+        path: portfolio,
+        text: 'Portafolio',
+        element: <Portfolio />
     },
     {
-        path: '/contacto',
+        path: contact,
         text: 'Contacto',
         element: <Contact gmapsApiKey={gmapsApiKey} />
     }
@@ -32,11 +37,11 @@ export const theLinks: ILink[] = [
 
 export const routes = (): JSX.Element[] => {
     const links: JSX.Element[] = [];
-    theLinks.forEach(link => links.push(renderRoute(link)));
+    theLinks.forEach(link => links.push(toRoute(link)));
     return links;
 }
 
-const renderRoute = (link: ILink): JSX.Element => {
+const toRoute = (link: ILink): JSX.Element => {
     return (
         <Route
             key={link.path}
