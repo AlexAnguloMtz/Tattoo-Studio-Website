@@ -4,6 +4,8 @@ import heroImg from '../../pictures/neck.jpg';
 import './Contact.scss';
 import { Map } from '../../components/Map/Map';
 import { ContactData } from "./ContactData";
+import { Parallax } from "../../components/Parallax/Parallax";
+import img from '../../pictures/skull-small.jpg';
 
 export const Contact: FC<Props> = ({ gmapsApiKey }) => {
 
@@ -19,6 +21,9 @@ export const Contact: FC<Props> = ({ gmapsApiKey }) => {
                     className='contact__map'
                     gmapsApiKey={gmapsApiKey} />
             </section>
+            <Parallax
+                className="contact__parallax"
+                backgroundImage={img} />
         </>
 
     );

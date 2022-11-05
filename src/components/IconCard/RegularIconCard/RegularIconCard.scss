@@ -2,6 +2,7 @@
 @import '../IconCard.scss';
 
 .regular-icon-card {
+
     @extend .icon-card;
 
     &__text {

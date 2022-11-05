@@ -8,6 +8,7 @@ export const IconCard: FC<Props> = ({
     icon,
     type = 'regular',
     url = '',
+    gradient = '',
     className = ''
 }) => {
 
@@ -16,6 +17,7 @@ export const IconCard: FC<Props> = ({
             <RegularIconCard
                 text={text}
                 icon={icon}
+                gradient={gradient}
                 className={className} />
         );
     }
@@ -26,6 +28,7 @@ export const IconCard: FC<Props> = ({
                 url={url}
                 text={text}
                 icon={icon}
+                gradient={gradient}
                 className={className} />
         );
     }
@@ -40,5 +43,6 @@ interface Props {
     icon: IconProp
     type?: 'regular' | 'link',
     url?: string,
+    gradient?: string
     className?: string
 }

@@ -21,4 +21,13 @@ $breakpoint: 1200px;
         }
     }
 
+    &__parallax {
+        background-position: center 50px;
+
+        @media screen and (min-width: 1000px) {
+            background-image: url('../../pictures/skull.jpg') !important;
+        }
+
+    }
+
 }

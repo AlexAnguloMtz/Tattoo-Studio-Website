@@ -6,6 +6,7 @@ import './RegularIconCard.scss';
 export const RegularIconCard: FC<Props> = ({
     text,
     icon,
+    gradient = '',
     className = ''
 }) => {
     return (
@@ -24,5 +25,6 @@ export const RegularIconCard: FC<Props> = ({
 interface Props {
     text: string,
     icon: IconProp,
+    gradient?: string,
     className?: string
 }
