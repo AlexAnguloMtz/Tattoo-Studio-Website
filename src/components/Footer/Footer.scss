@@ -32,8 +32,8 @@
         opacity: 0;
         transform: translateY(40px);
         transition:
-            opacity 900ms ease,
-            transform 750ms ease;
+            opacity 1500ms ease,
+            transform 1500ms ease;
     }
 
     &.visible {
@@ -68,8 +68,9 @@
     }
 
     &__phone {
+        width: 250px;
         clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-        transition: clip-path 2000ms ease;
+        transition: clip-path 3000ms ease;
     }
 
     &__social-media {
@@ -81,8 +82,8 @@
             width: 20%;
             opacity: 0;
             transition:
-                opacity 1000ms ease,
-                transform 1000ms ease;
+                opacity 1500ms ease,
+                transform 1500ms ease;
 
             $translateX-distance: 50px;
 
@@ -105,7 +106,7 @@
         opacity: 0;
         transform: translateY(50px);
 
-        $duration: 1000ms;
+        $duration: 1500ms;
         transition:
             opacity $duration ease,
             transform $duration ease;
@@ -123,7 +124,7 @@
             display: block;
             color: inherit;
             opacity: 0;
-            transition: opacity 1400ms ease;
+            transition: opacity 1500ms ease;
             position: relative;
 
             &::after {
