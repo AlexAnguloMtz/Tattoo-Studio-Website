@@ -4,6 +4,8 @@
 
     @include flex-column-center-center;
     font-size: clamp(1.3em, 1em + 1vw, 1.5em);
+    padding: 3em 0;
+    width: 100vw;
 
     .facebook,
     .instagram,
@@ -11,10 +13,39 @@
         border-bottom: 1px solid;
     }
 
-    @media screen and (min-width: 800px) {
+    .facebook,
+    .instagram,
+    .whatsapp,
+    .location {
+
+        &:hover {
+            transition:
+                background-color 600ms ease,
+                color 600ms ease;
+        }
+    }
+
+    .facebook:hover {
+        background-color: #4267B2;
+    }
+
+    .instagram:hover {
+        background-color: #cd486b;
+    }
+
+    .whatsapp:hover {
+        background-color: #075e54;
+    }
+
+    .location:hover {
+        background-color: rgb(181, 45, 45);
+    }
+
+    @media screen and (min-width: 1200px) {
 
         @include flex-row-center-center;
         flex-wrap: wrap;
+        width: 50%;
 
         .facebook,
         .instagram,
@@ -23,15 +54,7 @@
             width: 50%;
             padding: 0;
             height: 30vh;
-        }
-
-        .facebook,
-        .whatsapp {
-            border-right: 1px solid;
-        }
-
-        .whatsapp {
-            border-bottom: none;
+            border: none;
         }
 
     }
