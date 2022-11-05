@@ -1,9 +1,39 @@
 @import '../../scss-common/Common.scss';
 
 .contact__data {
+
     @include flex-column-center-center;
-    max-width: 500px;
-    gap: 2em;
-    padding: 3em 3em;
     font-size: clamp(1.3em, 1em + 1vw, 1.5em);
+
+    .facebook,
+    .instagram,
+    .whatsapp {
+        border-bottom: 1px solid;
+    }
+
+    @media screen and (min-width: 800px) {
+
+        @include flex-row-center-center;
+        flex-wrap: wrap;
+
+        .facebook,
+        .instagram,
+        .whatsapp,
+        .location {
+            width: 50%;
+            padding: 0;
+            height: 30vh;
+        }
+
+        .facebook,
+        .whatsapp {
+            border-right: 1px solid;
+        }
+
+        .whatsapp {
+            border-bottom: none;
+        }
+
+    }
+
 }

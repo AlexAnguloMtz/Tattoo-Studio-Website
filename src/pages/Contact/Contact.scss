@@ -9,7 +9,7 @@ $breakpoint: 1000px;
     color: white;
 
     @media screen and (min-width: $breakpoint) {
-        @include flex-row-space_between-center;
+        @include flex-row-center-center;
     }
 
     &__map {

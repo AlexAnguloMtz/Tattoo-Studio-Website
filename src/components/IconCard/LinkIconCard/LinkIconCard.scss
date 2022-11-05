@@ -1,0 +1,6 @@
+@import '../../../scss-common/Common.scss';
+@import '../IconCard.scss';
+
+.link-icon-card {
+    @extend .icon-card;
+}
