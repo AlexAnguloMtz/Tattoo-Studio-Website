@@ -1,4 +1,4 @@
-import { facebook, instagram, whatsapp, location } from "./data";
+import { facebook, instagram, whatsapp, location, whatsappUrl } from "./data";
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
@@ -23,6 +23,8 @@ export const ContactData = () => {
                 text={instagram} />
             <IconCard
                 className="whatsapp"
+                type={'link'}
+                url={whatsappUrl}
                 icon={faWhatsapp}
                 text={whatsapp} />
             <IconCard

@@ -9,3 +9,9 @@ export const location: string = `
     y Periferico Oriente 
     Col. 5 de Mayo Hermosillo, Sonora
 `;
+
+const customWhatsappMessage: string = 'Hola, quiero agendar una cita para un tatuaje.';
+
+export const whatsappUrl: string = `
+    https://api.whatsapp.com/send?phone=526623560806&text=${customWhatsappMessage}
+`;
