@@ -34,6 +34,13 @@ $emphasis-color: #D6D944;
     align-items: center;
 }
 
+@mixin flex-row-space_between-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
 @mixin flex-column-center {
     display: flex;
     flex-direction: column;

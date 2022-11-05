@@ -15,7 +15,9 @@ export const Contact: FC<Props> = ({ gmapsApiKey }) => {
             />
             <section className="contact">
                 <ContactData />
-                <Map gmapsApiKey={gmapsApiKey} />
+                <Map
+                    className='contact__map'
+                    gmapsApiKey={gmapsApiKey} />
             </section>
         </>
 

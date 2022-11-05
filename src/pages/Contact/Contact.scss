@@ -1,9 +1,24 @@
 @import '../../scss-common/Common.scss';
 
+$breakpoint: 1000px;
+
 .contact {
 
     @include flex-column-center-center;
     background-color: black;
     color: white;
+
+    @media screen and (min-width: $breakpoint) {
+        @include flex-row-space_between-center;
+    }
+
+    &__map {
+        width: 100vw;
+        height: 60vh;
+
+        @media screen and (min-width: $breakpoint) {
+            width: 50%;
+        }
+    }
 
 }
