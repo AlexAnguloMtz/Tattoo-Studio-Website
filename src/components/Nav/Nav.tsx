@@ -8,7 +8,7 @@ import { NavLinks } from './NavLinks/NavLinks';
 
 const NAV_COLOR_THRESHOLD: number = 10;
 
-export const Nav: FC<Props> = ({ links }) => {
+export const Nav: FC<Props> = ({ links, onLinkClick }) => {
 
 
     const [isNavExpanded, setNavExpanded] = useState(false);
@@ -30,19 +30,16 @@ export const Nav: FC<Props> = ({ links }) => {
         setColored(surpasedThresold());
     }
 
-    const handleHamburguerClick = () => {
-        handleNavEvent();
-    };
-
-    const handleLinkClick = (path: string) => {
-        handleNavEvent();
-    };
-
     const handleNavEvent = () => {
         toggleExpansion();
         if (!surpasedThresold()) {
             toggleColor();
         }
+    }
+
+    const handleLinkClick = () => {
+        onLinkClick();
+        handleNavEvent();
     }
 
     const toggleExpansion = () => setNavExpanded(!isNavExpanded);
@@ -55,7 +52,7 @@ export const Nav: FC<Props> = ({ links }) => {
             <Hamburguer
                 className='nav__hamburguer'
                 isCloseButton={isNavExpanded}
-                onClick={handleHamburguerClick} />
+                onClick={handleNavEvent} />
             <NavLinks
                 selectedPath={selectedPath(location)}
                 onLinkClick={handleLinkClick}
@@ -66,7 +63,8 @@ export const Nav: FC<Props> = ({ links }) => {
 }
 
 interface Props {
-    links: ILink[]
+    links: ILink[],
+    onLinkClick: () => void
 }
 
 const surpasedThresold = () => {

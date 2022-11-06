@@ -1,5 +1,26 @@
 @import '../../scss-common/Common.scss';
 
 .loading-screen {
-    @include absolute-four-corners;
+
+    @include flex-column-center-center;
+
+    font-size: 5em;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: black;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 300ms ease;
+    gap: 1em;
+
+    &.visible {
+        opacity: 1;
+        pointer-events: all;
+        transition: opacity 0ms ease;
+    }
+
 }
