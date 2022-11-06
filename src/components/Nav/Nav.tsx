@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Location } from 'react-router-dom';
 import { Hamburguer } from '../Hamburguer/Hamburguer';
 import { Logo } from '../Logo/Logo';
 import './Nav.scss'
@@ -10,7 +10,6 @@ const NAV_COLOR_THRESHOLD: number = 10;
 
 export const Nav: FC<Props> = ({ links }) => {
 
-    const [selectedPath, setSelectedPath] = useState(links[0].path);
 
     const [isNavExpanded, setNavExpanded] = useState(false);
 
@@ -36,7 +35,6 @@ export const Nav: FC<Props> = ({ links }) => {
     };
 
     const handleLinkClick = (path: string) => {
-        setSelectedPath(path);
         handleNavEvent();
     };
 
@@ -59,7 +57,7 @@ export const Nav: FC<Props> = ({ links }) => {
                 isCloseButton={isNavExpanded}
                 onClick={handleHamburguerClick} />
             <NavLinks
-                selectedPath={selectedPath}
+                selectedPath={selectedPath(location)}
                 onLinkClick={handleLinkClick}
                 links={links}
                 isVisible={isNavExpanded} />
@@ -73,4 +71,8 @@ interface Props {
 
 const surpasedThresold = () => {
     return window.scrollY >= NAV_COLOR_THRESHOLD
+}
+
+const selectedPath = (location: Location) => {
+    return location.pathname;
 }
