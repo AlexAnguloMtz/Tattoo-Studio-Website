@@ -16,7 +16,7 @@ export const Portfolio = () => {
                 img={heroImg}
                 header="Portafolio" />
 
-            <main className="gallery">
+            <main className="portfolio">
                 <AnimatedEntrance animation={Animation.Fading} threshold={0.5} freezeOnceVisible>
                     <img className="image" src={devil} alt="devil-tatto" />
                 </AnimatedEntrance>
