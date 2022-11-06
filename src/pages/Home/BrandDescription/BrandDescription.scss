@@ -41,10 +41,10 @@ $breakpoint: 1100px;
     .brand-description {
 
         &>* {
-            $duration: 700ms;
+            $duration: 500ms;
             transition:
-                transform $duration ease,
-                opacity $duration ease;
+                transform $duration ease-in-out,
+                opacity $duration ease-in-out;
         }
 
         &__content {

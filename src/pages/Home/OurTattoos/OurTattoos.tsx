@@ -30,9 +30,9 @@ const mobileLayout = () => {
                 {ourTattoosText}
             </p>
             <CallToAction
-                className="our-tattoos__call-to-action"
                 to={artist}
                 text="Conoce al artista"
+                size="small"
             />
         </PageSection>
     );

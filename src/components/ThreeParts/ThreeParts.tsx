@@ -26,7 +26,7 @@ export const ThreeParts: FC<Props> = ({
 
     const ref = useRef(null);
 
-    const isContentOnScreen = useSimpleIntersectionObserver({ ref, threshold: 0.5 });
+    const isContentOnScreen = useSimpleIntersectionObserver({ ref, threshold: 0.6 });
 
     const { width } = useWindowSize();
 

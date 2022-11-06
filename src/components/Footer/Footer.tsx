@@ -5,7 +5,7 @@ import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { useRef } from 'react';
 import { useSimpleIntersectionObserver } from '../../custom-hooks/useSimpleIntersectionObserver';
-import { address, phone } from '../../data/contact-info';
+import { address, facebookUrl, instagramUrl, phone, whatsappUrl } from '../../data/contact-info';
 import { theLinks } from '../../routing/routing';
 import { ILink } from '../Nav/NavLink/NavLink';
 import { Link } from 'react-router-dom';
@@ -25,9 +25,9 @@ export const Footer = () => {
                 <p>LOGO</p>
             </div>
             <div className='footer__social-media'>
-                <FontAwesomeIcon className='icon ig' icon={faInstagram} />
-                <FontAwesomeIcon className='icon fb' icon={faFacebookF} />
-                <FontAwesomeIcon className='icon wh' icon={faWhatsapp} />
+                <a href={instagramUrl} className='icon ig'><FontAwesomeIcon icon={faInstagram} /></a>
+                <a href={facebookUrl} className='icon fb'><FontAwesomeIcon icon={faFacebookF} /></a>
+                <a href={whatsappUrl} className='icon wh'><FontAwesomeIcon icon={faWhatsapp} /></a>
             </div>
             <p className='footer__address'>
                 {address}

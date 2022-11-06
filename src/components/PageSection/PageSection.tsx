@@ -11,6 +11,7 @@ const thresholdForTextVisibility: number = 0.5;
 export const PageSection: FC<Props> = ({
     img,
     children,
+    desktopImg = '',
     className = '',
     animated = true,
     size = 'full',
@@ -20,6 +21,7 @@ export const PageSection: FC<Props> = ({
         <BackgroundImage
             className={className}
             img={img}
+            desktopImg={desktopImg}
             size={size}>
             <Overlay gap={gap}>
                 {
@@ -34,6 +36,7 @@ export const PageSection: FC<Props> = ({
 
 interface Props {
     img: string,
+    desktopImg?: string,
     children?: JSX.Element | JSX.Element[],
     className?: string,
     animated?: boolean,

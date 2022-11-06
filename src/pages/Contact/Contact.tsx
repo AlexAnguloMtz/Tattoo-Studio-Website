@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { SectionHero } from "../../components/SectionHero/SectionHero";
-import heroImg from '../../pictures/neck.jpg';
+import heroImg from '../../pictures/neck-small.jpg';
+import desktopHeroImg from '../../pictures/neck.jpg';
 import './Contact.scss';
 import { Map } from '../../components/Map/Map';
 import { ContactData } from "./ContactData";
@@ -13,6 +14,7 @@ export const Contact: FC<Props> = ({ gmapsApiKey }) => {
         <>
             <SectionHero
                 img={heroImg}
+                desktopImg={desktopHeroImg}
                 header="Contacto"
             />
             <section className="contact">
