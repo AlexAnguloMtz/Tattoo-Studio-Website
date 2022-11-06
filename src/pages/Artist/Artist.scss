@@ -3,7 +3,7 @@
 $breakpoint: 850px;
 $artist-presentation-animation-duration: 900ms;
 $artist-presentation-animation-distance: 70px;
-$arrow-time-to-be-hidden: 200ms;
+$arrow-time-to-be-hidden: 100ms;
 
 @mixin transition-artist-presentation {
     transition:
@@ -73,6 +73,7 @@ $arrow-time-to-be-hidden: 200ms;
             flex-direction: row;
             flex-wrap: wrap;
             padding: 15em 0;
+            min-height: 100vh;
             gap: 5em;
         }
 
