@@ -4,7 +4,7 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import './ContactData.scss';
 import { IconCard } from "../../components/IconCard/IconCard";
-import { address, facebookProfile, instagramProfile, phone, whatsappUrl } from '../../data/contact-info';
+import { address, facebookProfile, instagramProfile, instagramUrl, phone, whatsappUrl } from '../../data/contact-info';
 
 const instagramGradient: string = 'linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)';
 
@@ -20,7 +20,7 @@ export const ContactData = () => {
             <IconCard
                 className="instagram"
                 type={'link'}
-                url={''}
+                url={instagramUrl}
                 icon={faInstagram}
                 text={instagramProfile}
                 gradient={instagramGradient} />

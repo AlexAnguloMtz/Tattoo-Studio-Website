@@ -1,4 +1,4 @@
-export const phone: string = `6623560805`;
+export const phone: string = `6623560806`;
 
 export const address: string = `
     Avenida Juarez #17 entre Reforma
@@ -19,7 +19,7 @@ export const instagramProfile: string = `
 `;
 
 export const instagramUrl: string = `
-    http://www.instagram.com
+    https://instagram.com/sr.daedra?igshid=YmMyMTa2M2Y=
 `;
 
 export const customWhatsappMessage: string = `
