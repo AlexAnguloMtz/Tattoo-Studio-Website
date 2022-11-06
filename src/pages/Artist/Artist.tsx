@@ -22,7 +22,7 @@ export const Artist = () => {
                 img={imgTwo}
                 desktopImg={imgThree}
                 animated={false}
-                size={'mid'}>
+                size={'full'}>
                 <CallToAction
                     to={contact}
                     text={'Agendar cita'} />

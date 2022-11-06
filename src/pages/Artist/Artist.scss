@@ -212,24 +212,4 @@ $artist-presentation-animation-distance: 70px;
         }
     }
 
-    &__book-session {
-
-        @media screen and (min-width: 1000px) {
-            background-position: center -150px;
-        }
-
-        @media screen and (min-width: 1300px) {
-            background-position: center -200px;
-        }
-
-        @media screen and (min-width: 1500px) {
-            background-position: center -250px;
-        }
-
-        @media screen and (min-width: 1750px) {
-            background-position: center -300px;
-        }
-
-    }
-
 }
