@@ -11,7 +11,7 @@ export const OurServices = () => {
 
     const ref = useRef<HTMLDivElement>(null);
 
-    const isContentOnScreen = useSimpleIntersectionObserver({ ref, threshold: 0.3 });
+    const isContentOnScreen = useSimpleIntersectionObserver({ ref, threshold: 0.6 });
 
     return (
         <>
