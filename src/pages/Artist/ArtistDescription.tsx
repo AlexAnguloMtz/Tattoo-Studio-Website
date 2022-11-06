@@ -8,7 +8,7 @@ export const ArtistDescription = () => {
 
     const ref = useRef(null);
 
-    const isVisible = useSimpleIntersectionObserver({ ref, threshold: 0.99, freezeOnceVisible: true });
+    const isVisible = useSimpleIntersectionObserver({ ref, threshold: 0.8, freezeOnceVisible: true });
 
     return (
         <div className="artist__description">
