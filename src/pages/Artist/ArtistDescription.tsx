@@ -1,32 +1,24 @@
-import { useRef } from "react";
-import { Anchor } from "../../components/Anchor/Anchor";
-import { Underlined } from "../../components/Underlined/Underlined";
-import { useSimpleIntersectionObserver } from "../../custom-hooks/useSimpleIntersectionObserver";
-import { instagramUrl } from "../../data/contact-info";
+import { FC } from "react";
+import { ArtistHeader } from "./ArtistHeader";
 
-export const ArtistDescription = () => {
-
-    const ref = useRef(null);
-
-    const isVisible = useSimpleIntersectionObserver({ ref, threshold: 0.8, freezeOnceVisible: true });
+export const ArtistDescription: FC<Props> = ({ isHeaderAnimationActive = false }) => {
 
     return (
         <div className="artist__description">
 
-            <h1 className="artist__header-desktop">
-                Conoce a
-                <Underlined
-                    text={'André'}
-                    className='variable-width'
-                />
-            </h1>
+            <ArtistHeader
+                className="artist__header-desktop"
+                isAnimationActive={isHeaderAnimationActive} />
             <p
-                ref={ref}
-                className={`artist__text ${isVisible ? 'visible' : ''}`}>
+                className={`artist__text `}>
                 {text}
             </p>
         </div>
     );
+}
+
+interface Props {
+    isHeaderAnimationActive: boolean
 }
 
 const text: JSX.Element =

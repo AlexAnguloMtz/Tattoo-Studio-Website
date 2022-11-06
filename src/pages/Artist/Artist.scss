@@ -66,10 +66,10 @@ $artist-presentation-animation-distance: 70px;
 
     &__header {
         font-family: Dosis, Roboto, Arial;
-        font-size: 2.3em;
+        font-size: 3em;
         text-align: center;
         padding: 1em 0;
-        max-width: 280px;
+        max-width: 300px;
         line-height: 1.2em;
 
         @media screen and (min-width: $breakpoint) {
@@ -99,11 +99,6 @@ $artist-presentation-animation-distance: 70px;
             width: 350px;
         }
 
-    }
-
-    .variable-width {
-        width: 0;
-        transition: width 1500ms ease;
     }
 
     &__description {

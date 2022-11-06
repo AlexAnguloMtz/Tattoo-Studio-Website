@@ -1,11 +1,11 @@
 import { FC, useRef } from "react";
-import { Underlined } from "../../components/Underlined/Underlined";
 import artist from '../../pictures/artist-working.png';
 import { ArtistDescription } from "./ArtistDescription";
 import { useSimpleIntersectionObserver } from "../../custom-hooks/useSimpleIntersectionObserver";
 import { ArtistLinks } from "./ArtistLinks";
 import { Parallax } from "../../components/Parallax/Parallax";
 import parallax from '../../pictures/love.jpg';
+import { ArtistHeader } from "./ArtistHeader";
 
 export const ArtistMain: FC = () => {
 
@@ -23,9 +23,10 @@ export const ArtistMain: FC = () => {
 
                 <div className="artist__header-and-picture">
 
-                    <h1 className="artist__header">
-                        {artistTitle()}
-                    </h1>
+                    <ArtistHeader
+                        className="artist__header"
+                        isAnimationActive={isTextVisible}
+                    />
 
                     <img
                         className="artist__picture"
@@ -35,7 +36,7 @@ export const ArtistMain: FC = () => {
 
                 </div>
 
-                <ArtistDescription />
+                <ArtistDescription isHeaderAnimationActive={isTextVisible} />
 
             </div>
 
@@ -48,15 +49,3 @@ export const ArtistMain: FC = () => {
         </section>
     );
 }
-
-const artistTitle = (): JSX.Element => {
-    return (
-        <>
-            Conoce a
-            <Underlined
-                text={'André'}
-                className='variable-width'
-            />
-        </>
-    );
-};

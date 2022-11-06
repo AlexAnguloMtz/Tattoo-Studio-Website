@@ -1,0 +1,24 @@
+.animated-underline {
+
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background-color: rgb(244, 240, 137);
+        bottom: 0;
+        left: 0;
+        border-radius: 6px;
+        transition: width 300ms ease-in-out;
+    }
+
+    &.active {
+        &::after {
+            transition: width 1500ms ease-in-out;
+            width: 63%;
+        }
+    }
+
+}
