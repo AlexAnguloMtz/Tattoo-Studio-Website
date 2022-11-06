@@ -6,16 +6,27 @@ import { ArtistLinks } from "./ArtistLinks";
 import { Parallax } from "../../components/Parallax/Parallax";
 import parallax from '../../pictures/love.jpg';
 import { ArtistHeader } from "./ArtistHeader";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 export const ArtistMain: FC = () => {
 
-    const ref = useRef(null);
+    const ref = useRef<HTMLDivElement>(null);
 
     const isTextVisible = useSimpleIntersectionObserver({ ref, threshold: 0.6 });
 
+    const scrollToContent = () => {
+        ref.current?.scrollIntoView({ behavior: 'smooth' })
+    }
+
     return (
-        <section
-            className={`artist`}>
+
+        <section className={`artist`}>
+
+            <FontAwesomeIcon
+                onClick={scrollToContent}
+                icon={faArrowDown}
+                className={`artist__arrow ${isTextVisible ? ' hidden' : ''}`} />
 
             <div
                 ref={ref}

@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { Button } from "../Button/Button";
-import './ArrowButton.scss';
+import './CircularArrowButton.scss';
 
-export const ArrowButton: FC<Props> = ({ onClick, className = '' }) => {
+export const CircularArrowButton: FC<Props> = ({ onClick, className = '' }) => {
     return (
         <Button
             className={`arrow-button ${className}`}

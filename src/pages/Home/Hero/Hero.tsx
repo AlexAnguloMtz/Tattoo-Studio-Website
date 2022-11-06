@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ArrowButton } from '../../../components/ArrowButton/ArrowButton';
+import { CircularArrowButton } from '../../../components/CircularArrowButton/CircularArrowButton';
 import './Hero.scss';
 
 export const Hero: FC<Props> = ({ onScrollButtonClick }) => {
@@ -9,7 +9,7 @@ export const Hero: FC<Props> = ({ onScrollButtonClick }) => {
                 <h1 className='hero__heading'>
                     LOGO
                 </h1>
-                <ArrowButton
+                <CircularArrowButton
                     className='hero__arrow'
                     onClick={onScrollButtonClick} />
             </div>
