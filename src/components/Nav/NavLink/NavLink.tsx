@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { Link } from 'react-router-dom'
+import { LinkAdapter } from "../../LinkAdapter/LinkAdapter";
 import './NavLink.scss';
 
 export const NavLink: FC<Props> = ({
@@ -9,13 +9,13 @@ export const NavLink: FC<Props> = ({
 }) => {
     return (
         <li key={link.path} className="nav__li">
-            <Link
-                onClick={() => onClick(link.path)}
+            <LinkAdapter
+                onClick={onClick}
                 className={`nav__link ${isSelected ? ' selected' : ''}`}
                 to={link.path}
             >
                 {link.text}
-            </Link>
+            </LinkAdapter>
         </li>
     );
 }
@@ -28,7 +28,7 @@ export interface ILink {
 
 interface Props {
     link: ILink,
-    onClick: (path: string) => void,
+    onClick: () => void,
     isSelected?: boolean
 }
 

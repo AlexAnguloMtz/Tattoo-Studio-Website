@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Link } from 'react-router-dom'
+import { LinkAdapter } from "../LinkAdapter/LinkAdapter";
 import './CallToAction.scss';
 
 export const CallToAction: FC<Props> = ({
@@ -8,12 +8,12 @@ export const CallToAction: FC<Props> = ({
     className,
     size }) => {
     return (
-        <Link
+        <LinkAdapter
             to={to}
             className={`call-to-action ${size} ${className}`}
         >
             {text}
-        </Link>
+        </LinkAdapter>
     );
 }
 

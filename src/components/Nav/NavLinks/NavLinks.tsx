@@ -17,13 +17,13 @@ export const NavLinks: React.FC<Props> = ({
 interface Props {
     isVisible: boolean,
     links: ILink[],
-    onLinkClick: (path: string) => void,
+    onLinkClick: () => void,
     selectedPath: string
 }
 
 const toLink = (
     link: ILink,
-    onClick: (path: string) => void,
+    onClick: () => void,
     selectedPath: string
 ) => {
     return (

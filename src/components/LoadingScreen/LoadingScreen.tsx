@@ -1,17 +1,26 @@
-import { FC } from 'react';
+import { useEffect, useState } from 'react';
+import { useLocation, Location } from 'react-router-dom';
 import { Logo } from '../Logo/Logo';
 import { Spinner } from '../Spinner/Spinner';
 import './LoadingScreen.scss';
 
-export const LoadingScreen: FC<Props> = ({ isVisible }) => {
+const timeoutDuration: number = 1000;
+
+export const LoadingScreen = () => {
+
+    const location: Location = useLocation();
+
+    const [isVisible, setVisible] = useState(false);
+
+    useEffect(() => {
+        setVisible(true);
+        setTimeout(() => setVisible(false), timeoutDuration);
+    }, [location]);
+
     return (
         <div className={`loading-screen ${isVisible ? ' visible' : ''}`}>
             <Logo />
             <Spinner />
         </div>
     );
-}
-
-interface Props {
-    isVisible: boolean
 }

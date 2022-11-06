@@ -8,7 +8,7 @@ import { NavLinks } from './NavLinks/NavLinks';
 
 const NAV_COLOR_THRESHOLD: number = 10;
 
-export const Nav: FC<Props> = ({ links, onLinkClick }) => {
+export const Nav: FC<Props> = ({ links }) => {
 
 
     const [isNavExpanded, setNavExpanded] = useState(false);
@@ -37,11 +37,6 @@ export const Nav: FC<Props> = ({ links, onLinkClick }) => {
         }
     }
 
-    const handleLinkClick = () => {
-        onLinkClick();
-        handleNavEvent();
-    }
-
     const toggleExpansion = () => setNavExpanded(!isNavExpanded);
 
     const toggleColor = () => setColored(!isColored);
@@ -55,7 +50,7 @@ export const Nav: FC<Props> = ({ links, onLinkClick }) => {
                 onClick={handleNavEvent} />
             <NavLinks
                 selectedPath={selectedPath(location)}
-                onLinkClick={handleLinkClick}
+                onLinkClick={handleNavEvent}
                 links={links}
                 isVisible={isNavExpanded} />
         </nav>
@@ -63,8 +58,7 @@ export const Nav: FC<Props> = ({ links, onLinkClick }) => {
 }
 
 interface Props {
-    links: ILink[],
-    onLinkClick: () => void
+    links: ILink[]
 }
 
 const surpasedThresold = () => {

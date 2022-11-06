@@ -8,7 +8,7 @@ import { useSimpleIntersectionObserver } from '../../custom-hooks/useSimpleInter
 import { address, facebookUrl, instagramUrl, phone, whatsappUrl } from '../../data/contact-info';
 import { theLinks } from '../../routing/routing';
 import { ILink } from '../Nav/NavLink/NavLink';
-import { Link } from 'react-router-dom';
+import { LinkAdapter } from '../LinkAdapter/LinkAdapter';
 
 export const Footer = () => {
 
@@ -45,12 +45,12 @@ const links = (): JSX.Element[] => {
 
 const toAnchor = (link: ILink) => {
     return (
-        <Link
+        <LinkAdapter
             key={link.path}
             className={'link'}
             to={link.path}
         >
             {link.text}
-        </Link>
+        </LinkAdapter>
     );
 }

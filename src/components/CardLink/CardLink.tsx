@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Link } from "react-router-dom";
+import { LinkAdapter } from "../LinkAdapter/LinkAdapter";
 import './CardLink.scss';
 
 const linkClass: string = 'card-link__link';
@@ -37,10 +37,10 @@ const linkFor = (isAnchor: boolean, text: string, href: string) => {
     }
 
     return (
-        <Link
+        <LinkAdapter
             className={linkClass}
             to={href}
         >
             {text}
-        </Link>);
+        </LinkAdapter>);
 }
