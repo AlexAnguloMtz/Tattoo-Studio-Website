@@ -1,5 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import { useLocation, Location } from 'react-router-dom';
+import { useLoading } from '../../context/loading-context';
 import { Hamburguer } from '../Hamburguer/Hamburguer';
 import { Logo } from '../Logo/Logo';
 import './Nav.scss'
@@ -10,6 +11,7 @@ const NAV_COLOR_THRESHOLD: number = 10;
 
 export const Nav: FC<Props> = ({ links }) => {
 
+    const { isLoading } = useLoading();
 
     const [isNavExpanded, setNavExpanded] = useState(false);
 
@@ -19,12 +21,20 @@ export const Nav: FC<Props> = ({ links }) => {
 
     useEffect(() => setColored(false), [location]);
 
-    const handleScroll = () => {
+    useEffect(handleScroll, []);
+
+    useEffect(handleLoading, [isLoading]);
+
+    function handleScroll() {
         window.addEventListener("scroll", colorNavWhenNecessary);
         return () => window.addEventListener("scroll", colorNavWhenNecessary);
     }
 
-    useEffect(handleScroll, []);
+    function handleLoading() {
+        if (isLoading) {
+            setNavExpanded(false);
+        }
+    }
 
     const colorNavWhenNecessary = () => {
         setColored(surpasedThresold());
