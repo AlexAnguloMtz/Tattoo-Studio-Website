@@ -6,8 +6,10 @@ import { Footer } from './components/Footer/Footer';
 import { LoadScreen } from './components/LoadScreen/LoadScreen';
 import { LoadingContext } from './context/loading-context';
 import { useState } from 'react';
-import { LoadingChronometer } from './components/LoadingChronometer/LoadingChronometer';
 import { ScrollingManager } from './components/ScrollingManager/ScrollingManager';
+import { LoadingManager } from './components/LoadingManager/LoadingChronometer';
+import { ContactDataContext } from './context/contact-info-context';
+import { contactData } from './data/contact-info';
 
 function App() {
 
@@ -17,14 +19,16 @@ function App() {
     <div className="app">
       <HashRouter>
         <LoadingContext.Provider value={{ isLoading, setLoading }}>
-          <LoadingChronometer />
-          <ScrollingManager />
-          <LoadScreen />
-          <Nav links={theLinks} />
-          <Routes>
-            {routes()}
-          </Routes>
-          <Footer />
+          <ContactDataContext.Provider value={contactData}>
+            <LoadingManager />
+            <ScrollingManager />
+            <LoadScreen />
+            <Nav links={theLinks} />
+            <Routes>
+              {routes()}
+            </Routes>
+            <Footer />
+          </ContactDataContext.Provider>
         </LoadingContext.Provider>
       </HashRouter>
     </div>

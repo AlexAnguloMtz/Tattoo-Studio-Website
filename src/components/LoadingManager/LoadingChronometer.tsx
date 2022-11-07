@@ -4,7 +4,7 @@ import { useLoading } from "../../context/loading-context";
 
 const loadingDuration: number = 600;
 
-export const LoadingChronometer = () => {
+export const LoadingManager = () => {
 
     const location = useLocation();
 

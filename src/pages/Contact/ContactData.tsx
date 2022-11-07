@@ -4,36 +4,46 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import './ContactData.scss';
 import { IconCard } from "../../components/IconCard/IconCard";
-import { address, facebookProfile, facebookUrl, instagramProfile, instagramUrl, phone, whatsappUrl } from '../../data/contact-info';
+import { useContactData } from '../../context/contact-info-context';
+import { Address } from '../../data/contact-info';
 
 const instagramGradient: string = 'linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)';
 
 export const ContactData = () => {
+
+    const contactData = useContactData();
+
     return (
         <div className="contact__data">
             <IconCard
                 className="facebook"
                 type={'link'}
-                url={facebookUrl}
+                url={contactData.facebookUrl}
                 icon={faFacebookF}
-                text={facebookProfile} />
+                text={contactData.facebookProfile} />
             <IconCard
                 className="instagram"
                 type={'link'}
-                url={instagramUrl}
+                url={contactData.instagramUrl}
                 icon={faInstagram}
-                text={instagramProfile}
+                text={contactData.instagramProfile}
                 gradient={instagramGradient} />
             <IconCard
                 className="whatsapp"
                 type={'link'}
-                url={whatsappUrl}
+                url={contactData.whatsappUrl}
                 icon={faWhatsapp}
-                text={phone} />
+                text={contactData.whatsapp} />
             <IconCard
                 className="location"
                 icon={faLocationDot}
-                text={address} />
+                text={toString(contactData.address)} />
         </div>
     );
+}
+
+const toString = (address: Address): string => {
+    return `
+        ${address.streetAndNumber}, ${address.district}, ${address.cityAndState}
+    `;
 }
