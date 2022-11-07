@@ -11,7 +11,7 @@ export const reviews: IReview[] =
                 profilePic: profileOne
             },
             text: `
-               Recibí un servicio totalmente profesional.
+               Quedé super encantada con mi tatuaje.
                Si estás en Sonora y quieres tatuarte,
                Vallhala Tattoos debe ser tu primera opción."
             `,

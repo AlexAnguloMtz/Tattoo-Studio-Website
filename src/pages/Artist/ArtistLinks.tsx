@@ -1,8 +1,11 @@
 import { CardLink } from "../../components/CardLink/CardLink";
-import { facebookUrl, instagramUrl } from "../../data/contact-info";
+import { useContactData } from "../../context/contact-info-context";
 import { portfolio } from "../../routing/routing";
 
 export const ArtistLinks = () => {
+
+    const { instagramUrl, facebookUrl } = useContactData();
+
     return (
         <div className="artist__links">
             <CardLink

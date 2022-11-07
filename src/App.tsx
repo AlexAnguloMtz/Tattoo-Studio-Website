@@ -7,7 +7,7 @@ import { LoadScreen } from './components/LoadScreen/LoadScreen';
 import { LoadingContext } from './context/loading-context';
 import { useState } from 'react';
 import { ScrollingManager } from './components/ScrollingManager/ScrollingManager';
-import { LoadingManager } from './components/LoadingManager/LoadingChronometer';
+import { LoadingManager } from './components/LoadingManager/LoadingManager';
 import { ContactDataContext } from './context/contact-info-context';
 import { contactData } from './data/contact-info';
 

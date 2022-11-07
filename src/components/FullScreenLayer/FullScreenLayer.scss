@@ -1,9 +1,0 @@
-@import '../../scss-common/Common.scss';
-
-.full-screen-layer {
-    @include fixed-four-corners;
-    @include flex-row-center-center;
-    z-index: 100;
-    background-color: black;
-    color: white;
-}
