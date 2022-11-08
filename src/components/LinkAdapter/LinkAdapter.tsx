@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useLoading } from '../../context/loading-context';
 import './LinkAdapter.scss';
 
-const timeBeforeClickEvent: number = 100;
+const timeBeforeClickEvent: number = 50;
 
 export const LinkAdapter: FC<Props> = ({
     to,

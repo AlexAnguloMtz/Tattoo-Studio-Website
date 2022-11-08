@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useLoading } from "../../context/loading-context";
 
-const loadingDuration: number = 600;
+const loadingDuration: number = 1000;
 
 export const LoadingManager = () => {
 
