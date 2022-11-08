@@ -1,7 +1,9 @@
 import { FC, useEffect, useState } from 'react';
 import { useLocation, Location } from 'react-router-dom';
 import { useLoading } from '../../context/loading-context';
+import { home } from '../../routing/routing';
 import { Hamburguer } from '../Hamburguer/Hamburguer';
+import { LinkAdapter } from '../LinkAdapter/LinkAdapter';
 import { Logo } from '../Logo/Logo';
 import './Nav.scss'
 import { ILink } from './NavLink/NavLink';
@@ -9,7 +11,7 @@ import { NavLinks } from './NavLinks/NavLinks';
 
 const NAV_COLOR_THRESHOLD: number = 10;
 
-export const Nav: FC<Props> = ({ links }) => {
+export const Nav: FC<Props> = ({ links, homePage: homepage }) => {
 
     const { isLoading } = useLoading();
 
@@ -53,7 +55,11 @@ export const Nav: FC<Props> = ({ links }) => {
 
     return (
         <nav className={`nav ${isColored ? ' colored' : ''}`}>
-            <Logo />
+            <LinkAdapter
+                className='nav__homepage-link'
+                to={homepage.path}>
+                <Logo />
+            </LinkAdapter>
             <Hamburguer
                 className='nav__hamburguer'
                 isCloseButton={isNavExpanded}
@@ -68,7 +74,8 @@ export const Nav: FC<Props> = ({ links }) => {
 }
 
 interface Props {
-    links: ILink[]
+    links: ILink[],
+    homePage: ILink
 }
 
 const surpasedThresold = () => {

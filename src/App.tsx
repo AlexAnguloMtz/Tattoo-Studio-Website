@@ -1,7 +1,7 @@
 import './App.scss';
 import { Nav } from './components/Nav/Nav';
 import { HashRouter, Routes } from "react-router-dom";
-import { theLinks, routes } from './routing/routing';
+import { theLinks, routes, homePage } from './routing/routing';
 import { Footer } from './components/Footer/Footer';
 import { LoadScreen } from './components/LoadScreen/LoadScreen';
 import { LoadingContext } from './context/loading-context';
@@ -23,7 +23,9 @@ function App() {
             <LoadingManager />
             <ScrollingManager />
             <LoadScreen />
-            <Nav links={theLinks} />
+            <Nav
+              homePage={homePage}
+              links={theLinks} />
             <Routes>
               {routes()}
             </Routes>

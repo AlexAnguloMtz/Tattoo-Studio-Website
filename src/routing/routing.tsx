@@ -12,12 +12,14 @@ export const artist: string = '/artista';
 export const portfolio: string = '/portafolio';
 export const contact: string = '/contact';
 
+export const homePage: ILink = {
+    path: home,
+    text: 'Inicio',
+    element: <Home />
+}
+
 export const theLinks: ILink[] = [
-    {
-        path: home,
-        text: 'Inicio',
-        element: <Home />
-    },
+    homePage,
     {
         path: artist,
         text: 'Artista',
