@@ -6,7 +6,7 @@ import { GallerySlider } from "./GallerySlider/GallerySlider";
 import { decide } from "../../common/decide";
 import { disableScrolling, enableScrolling } from "../../common/scrolling";
 
-export const Gallery: FC<Props> = ({ images, className }) => {
+export const Gallery: FC<Props> = ({ images, className = '' }) => {
 
     const [sliderImg, setSliderImg] = useState('');
 
@@ -82,5 +82,5 @@ export const Gallery: FC<Props> = ({ images, className }) => {
 
 interface Props {
     images: string[],
-    className: string
+    className?: string
 }

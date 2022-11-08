@@ -25,9 +25,7 @@ export const Portfolio = () => {
                 img={heroImg}
                 header="Portafolio" />
             <section className="portfolio">
-                <Gallery
-                    images={images}
-                    className={''} />
+                <Gallery images={images} />
             </section>
         </>
     );

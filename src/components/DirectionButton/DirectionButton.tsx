@@ -1,5 +1,3 @@
-import { faChevronCircleLeft, faChevronCircleRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { FC } from "react"
 import './DirectionButton.scss';
 
@@ -11,10 +9,7 @@ export const DirectionButton: FC<Props> = ({
     return (
         <button
             onClick={onClick}
-            className={`direction-button ${className}`}>
-            <FontAwesomeIcon
-                className={`direction-button__icon`}
-                icon={direction === 'left' ? faChevronCircleLeft : faChevronCircleRight} />
+            className={`direction-button ${direction} ${className}`}>
         </button>
     );
 }

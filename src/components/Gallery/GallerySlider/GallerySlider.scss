@@ -68,27 +68,9 @@
 
         .gallery__slider-button {
 
-            $distance-from-border: 1em;
-            $transition-distance: 0.5em;
             display: block;
             position: absolute;
             transition: transform 300ms ease;
-
-            &.left {
-                left: $distance-from-border;
-
-                &:hover {
-                    transform: translateX(calc($transition-distance * (-1)));
-                }
-            }
-
-            &.right {
-                right: $distance-from-border;
-
-                &:hover {
-                    transform: translateX($transition-distance);
-                }
-            }
 
         }
     }

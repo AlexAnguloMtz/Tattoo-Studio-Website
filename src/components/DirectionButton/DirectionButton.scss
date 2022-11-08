@@ -1,22 +1,61 @@
 .direction-button {
+    $distance-from-border: 1em;
+    $transition-distance: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 70px;
+    height: 100px;
     border: none;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
 
-    &__icon {
-        color: white;
-        background-color: black;
-        border-radius: 50%;
-        font-size: 2.5em;
-        transition: color 300ms ease;
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 5px;
+        background-color: white;
+        right: 0.5em;
+        border-radius: 10px;
+        transform-origin: right center;
+        transition: background-color 300ms ease;
+    }
+
+    &::before {
+        transform: rotate(30deg) translateY(1px);
+    }
+
+    &::after {
+        transform: rotate(-30deg) translateY(-1px);
+    }
+
+    &.left {
+
+        left: $distance-from-border;
+        transform: rotate(180deg);
+
+        &:hover {
+            transform: rotate(180deg) translateX($transition-distance);
+        }
+    }
+
+    &.right {
+        right: $distance-from-border;
+
+        &:hover {
+            transform: translateX($transition-distance);
+        }
     }
 
     &:hover {
 
-        .direction-button__icon {
-            color: rgb(205, 195, 195);
+        &::before,
+        &::after {
+            background-color: rgb(114, 117, 117);
         }
-
     }
 
 }
