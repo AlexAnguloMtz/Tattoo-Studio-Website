@@ -1,3 +1,5 @@
+$breakpoint: 800px;
+
 .direction-button {
     $distance-from-border: 1em;
     $transition-distance: 0.5em;
@@ -5,8 +7,8 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 70px;
-    height: 100px;
+    width: 50px;
+    height: 80px;
     border: none;
     background-color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
@@ -15,13 +17,18 @@
     &::after {
         content: '';
         position: absolute;
-        width: 40px;
+        width: 30px;
         height: 5px;
         background-color: white;
         right: 0.5em;
         border-radius: 10px;
         transform-origin: right center;
         transition: background-color 300ms ease;
+
+        @media screen and (min-width: $breakpoint) {
+            width: 50px;
+        }
+
     }
 
     &::before {
@@ -50,12 +57,20 @@
         }
     }
 
-    &:hover {
+    @media screen and (min-width: 500px) {
+        &:hover {
 
-        &::before,
-        &::after {
-            background-color: rgb(114, 117, 117);
+            &::before,
+            &::after {
+                background-color: rgb(114, 117, 117);
+            }
+
         }
+    }
+
+    @media screen and (min-width: $breakpoint) {
+        width: 80px;
+        height: 100px;
     }
 
 }
