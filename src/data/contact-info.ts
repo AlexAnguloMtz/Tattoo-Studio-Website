@@ -10,7 +10,7 @@ export interface Address {
 
 export const address: Address = {
     streetAndNumber: 'Esqueda 254',
-    district: 'López Portillo',
+    district: 'Col. López Portillo',
     cityAndState: 'Hermosillo, Son',
     latitude: '29.13008334025927',
     longitude: '-110.96935791307818'

@@ -1,0 +1,8 @@
+@import '../../scss-common/Common.scss';
+
+.gallery {
+    @include flex-row-center-center;
+    flex-wrap: wrap;
+    padding: 5em 1em;
+    gap: 2em;
+}

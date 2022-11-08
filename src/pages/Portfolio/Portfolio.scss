@@ -1,38 +1,5 @@
 @import '../../scss-common/Common.scss';
 
 .portfolio {
-
     background-color: rgb(19, 18, 18);
-    padding: 6em 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 6em;
-
-    .image {
-        width: 260px;
-        height: 400px;
-        outline: 6px solid rgb(111, 105, 105);
-    }
-
-    .contain {
-        object-fit: contain;
-    }
-
-}
-
-@media screen and (min-width: 800px) {
-    .portfolio {
-
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 5em;
-
-        .image {
-            width: 400px;
-            height: calc(400px * 1.4);
-        }
-
-    }
 }

@@ -1,38 +1,34 @@
 import './Portfolio.scss';
-import dragon from '../../pictures/dragon-recolored-small.jpeg';
-import devil from '../../pictures/devil-cropped.jpeg';
-import flowers from '../../pictures/flowers-cropped.jpeg';
-import miniDevil from '../../pictures/mini-devil-cropped.jpeg';
-import asian from '../../pictures/asian-cropped.jpeg';
 import heroImg from '../../pictures/artist-small.jpg';
-import { AnimatedEntrance, Animation } from "../../components/AnimatedEntrance/AnimatedEntrance";
 import { SectionHero } from "../../components/SectionHero/SectionHero";
+import { Gallery } from '../../components/Gallery/Gallery';
+import img1 from '../../pictures/Portfolio/1.jpeg';
+import img2 from '../../pictures/Portfolio/2.jpeg';
+import img3 from '../../pictures/Portfolio/3.jpeg';
+import img4 from '../../pictures/Portfolio/4.jpeg';
+import img5 from '../../pictures/Portfolio/5.jpeg';
+import img6 from '../../pictures/Portfolio/6.jpeg';
+
+const images: string[] = [
+    img1,
+    img2,
+    img3,
+    img4,
+    img5,
+    img6
+]
 
 export const Portfolio = () => {
-
     return (
         <>
             <SectionHero
                 img={heroImg}
                 header="Portafolio" />
-
-            <main className="portfolio">
-                <AnimatedEntrance animation={Animation.Fading} threshold={0.5} freezeOnceVisible>
-                    <img className="image" src={devil} alt="devil-tatto" />
-                </AnimatedEntrance>
-                <AnimatedEntrance animation={Animation.Fading} threshold={0.5} freezeOnceVisible>
-                    <img className="image contain" src={flowers} alt="flowers-tatto" />
-                </AnimatedEntrance>
-                <AnimatedEntrance animation={Animation.Fading} threshold={0.5} freezeOnceVisible>
-                    <img className="image" src={dragon} alt="dragon-tatto" />
-                </AnimatedEntrance>
-                <AnimatedEntrance animation={Animation.Fading} threshold={0.5} freezeOnceVisible>
-                    <img className="image contain" src={miniDevil} alt="mini-devil-tatto" />
-                </AnimatedEntrance>
-                <AnimatedEntrance animation={Animation.Fading} threshold={0.5} freezeOnceVisible>
-                    <img className="image contain" src={asian} alt="asian-letters-tatto" />
-                </AnimatedEntrance>
-            </main>
+            <section className="portfolio">
+                <Gallery
+                    images={images}
+                    className={''} />
+            </section>
         </>
     );
 }

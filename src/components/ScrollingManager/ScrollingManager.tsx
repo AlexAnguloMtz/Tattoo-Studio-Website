@@ -1,6 +1,7 @@
 import { useEffect } from "react";
+import { decide } from "../../common/decide";
+import { disableScrolling, enableScrolling } from "../../common/scrolling";
 import { useLoading } from "../../context/loading-context";
-import { decide } from "../../util/decide";
 
 export const ScrollingManager = () => {
 
@@ -11,16 +12,4 @@ export const ScrollingManager = () => {
     }, [isLoading]);
 
     return (<></>);
-}
-
-const disableScrolling = (): void => {
-    setBodyOverflow('hidden');
-}
-
-const enableScrolling = (): void => {
-    setBodyOverflow('auto');
-}
-
-const setBodyOverflow = (value: string): void => {
-    document.body.style.overflow = value;
 }
