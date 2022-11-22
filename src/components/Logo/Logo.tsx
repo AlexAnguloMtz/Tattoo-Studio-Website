@@ -1,9 +1,14 @@
 import './Logo.scss';
+import logoImg from '../../pictures/logo.png';
+import { FC } from 'react';
 
-export const Logo = () => {
+export const Logo: FC<Props> = ({ className = '' }) => {
     return (
-        <p className='logo'>
-            LOGO
-        </p>
+        <img className={`logo ${className}`} src={logoImg} alt='logo'>
+        </img>
     );
+}
+
+interface Props {
+    className?: string
 }

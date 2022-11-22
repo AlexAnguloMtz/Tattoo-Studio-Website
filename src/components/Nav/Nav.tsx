@@ -58,7 +58,7 @@ export const Nav: FC<Props> = ({ links, homePage: homepage }) => {
             <LinkAdapter
                 className='nav__homepage-link'
                 to={homepage.path}>
-                <Logo />
+                <Logo className='nav__logo' />
             </LinkAdapter>
             <Hamburguer
                 className='nav__hamburguer'

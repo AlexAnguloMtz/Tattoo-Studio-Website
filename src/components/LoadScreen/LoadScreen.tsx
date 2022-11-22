@@ -10,7 +10,7 @@ export const LoadScreen = () => {
 
     return (
         <div className={`load-screen ${isLoading ? ' on-screen' : ''}`}>
-            <Logo />
+            <Logo className="load-screen__logo" />
             <Spinner />
         </div>
     );

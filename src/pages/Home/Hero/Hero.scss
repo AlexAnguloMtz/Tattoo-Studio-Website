@@ -15,8 +15,34 @@
         position: relative;
     }
 
-    &__heading {
-        font-size: 3em;
+    &__logo-container {
+        @include flex-row-center-center;
+        width: 120px;
+        height: 120px;
+        background-color: black;
+        border-radius: 50%;
+
+        @media screen and (min-width: 600px) {
+            width: 150px;
+            height: 150px;
+        }
+
+        @media screen and (min-width: 800px) {
+            width: 200px;
+            height: 200px;
+        }
+    }
+
+    &__logo {
+        max-width: 100px;
+
+        @media screen and (min-width: 600px) {
+            max-width: 130px;
+        }
+
+        @media screen and (min-width: 800px) {
+            max-width: 170px;
+        }
     }
 
     & .hero__arrow {

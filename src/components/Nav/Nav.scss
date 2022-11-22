@@ -19,10 +19,24 @@
         background-color: black;
     }
 
-    &__homepage-link {
-        padding: 1em 2em 1em 1em;
-    }
+    &__logo {
+        @media screen and (min-width: 600px) {
+            margin-left: 2em;
+        }
 
+        @media screen and (min-width: 800px) {
+            margin-left: 3em;
+        }
+
+        @media screen and (min-width: 1000px) {
+            margin-left: 5em;
+        }
+
+        @media screen and (min-width: 1500px) {
+            margin-left: 7em;
+        }
+
+    }
 
 }
 

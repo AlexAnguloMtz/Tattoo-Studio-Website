@@ -23,7 +23,7 @@
         text-align: center;
     }
 
-    &__logo {
+    &__logo-container {
         @include circle(4em);
         @include flex-column-center-center;
         color: white;
@@ -36,9 +36,17 @@
             transform 1500ms ease;
     }
 
+    &__logo {
+        max-width: 150px;
+
+        @media screen and (min-width: 1200px) {
+            max-width: 200px;
+        }
+    }
+
     &.visible {
 
-        .footer__logo {
+        .footer__logo-container {
             opacity: 1;
             transform: none;
         }

@@ -1,14 +1,11 @@
-import React, { FC, useRef } from 'react';
+import { FC, useRef } from 'react';
 import './BrandDescription.scss';
 import img from '../../../pictures/pink-flower.jpg';
 import { data } from './data'
 import { useSimpleIntersectionObserver } from '../../../custom-hooks/useSimpleIntersectionObserver';
-import { useWindowSize } from 'usehooks-ts';
 import { Parallax } from '../../../components/Parallax/Parallax';
 
-const header: string = 'Vallhala Tattoos';
-
-const breakpoint = 1100;
+const header: string = 'Valhalla Tattoos';
 
 export const BrandDescription: FC<Props> = ({ children }) => {
 

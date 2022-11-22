@@ -9,6 +9,7 @@ import { theLinks } from '../../routing/routing';
 import { ILink } from '../Nav/NavLink/NavLink';
 import { LinkAdapter } from '../LinkAdapter/LinkAdapter';
 import { useContactData } from '../../context/contact-info-context';
+import { Logo } from '../Logo/Logo';
 
 export const Footer = () => {
 
@@ -23,9 +24,8 @@ export const Footer = () => {
             <div className='footer__phone'>
                 {contactData.whatsapp}
             </div>
-
-            <div className='footer__logo'>
-                <p>LOGO</p>
+            <div className='footer__logo-container'>
+                <Logo className='footer__logo' />
             </div>
             <div className='footer__social-media'>
                 <a href={contactData.instagramUrl} className='icon ig'><FontAwesomeIcon icon={faInstagram} /></a>

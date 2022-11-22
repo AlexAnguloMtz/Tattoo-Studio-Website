@@ -1,14 +1,15 @@
 import { FC } from 'react';
 import { CircularArrowButton } from '../../../components/CircularArrowButton/CircularArrowButton';
+import { Logo } from '../../../components/Logo/Logo';
 import './Hero.scss';
 
 export const Hero: FC<Props> = ({ onScrollButtonClick }) => {
     return (
         <div className="hero">
             <div className='hero__overlay'>
-                <h1 className='hero__heading'>
-                    LOGO
-                </h1>
+                <div className='hero__logo-container'>
+                    <Logo className='hero__logo' />
+                </div>
                 <CircularArrowButton
                     className='hero__arrow'
                     onClick={onScrollButtonClick} />
