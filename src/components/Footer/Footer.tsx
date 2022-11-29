@@ -17,7 +17,7 @@ export const Footer = () => {
 
     const ref = useRef(null);
 
-    const isVisible = useSimpleIntersectionObserver({ ref, threshold: 0.7 });
+    const isVisible = useSimpleIntersectionObserver({ ref, threshold: 0.4 });
 
     return (
         <footer ref={ref} className={`footer ${isVisible ? ' visible' : ''}`} >
